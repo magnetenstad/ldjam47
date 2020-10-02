@@ -1,12 +1,15 @@
 extends Control
 
 onready var theme_manager = ThemeManager.new()
+onready var MAIL = preload("Mail.tscn")
 
 func _ready():
 	theme_manager.init()
 	var file = File.new()
 	set_theme(theme_manager.themes[0])
-
+	mail_add()
+	mail_add()
+	
 func file_save(content, path):
 	var file = File.new()
 	file.open(path, File.WRITE)
@@ -29,3 +32,7 @@ func json_save(content, path):
 
 func json_load(path):
 	return parse_json(file_load(path))
+
+func mail_add():
+	var mail = MAIL.instance()
+	$HBoxContainer/PanelContainer/VBoxContainer.add_child(mail)
