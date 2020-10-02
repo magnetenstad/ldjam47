@@ -4,8 +4,7 @@ onready var theme_manager = ThemeManager.new()
 onready var PF = preload("PopupFunctions.gd").new(get_tree().root.get_child(0))
 const MAIL = preload("Mail.tscn")
 const POPUP = preload("res://Popup.tscn")
-var last_popup_x = 0
-var last_popup_y = 0
+var balance = 10000
 
 func _ready():
 	theme_manager.init()
@@ -16,6 +15,7 @@ func _ready():
 	mail_add("uncleJoe123", "Wanna meet up some time?")
 	mail_add("Duolingo", " You have not studied.")
 	PF.popup1()
+	add_balance(0)
 
 func file_save(content, path):
 	var file = File.new()
@@ -45,3 +45,6 @@ func mail_add(header, content):
 	mail.get_child(0).get_child(0).text = header
 	mail.get_child(0).get_child(1).text = content
 	$HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer.add_child(mail)
+func add_balance(n):
+	balance += n
+	$HBoxContainer/VBoxContainer/BalanceCont/BalanceLabel.text = "$" + str(balance)
