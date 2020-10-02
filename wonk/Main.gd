@@ -6,12 +6,12 @@ const POPUP = preload("res://Popup.tscn")
 
 func _ready():
 	theme_manager.init()
-	var file = File.new()
+	#var file = File.new()
 	set_theme(theme_manager.themes[0])
 	mail_add()
 	mail_add()
 	popup_show(200, 200, "FREE ANTIVIRUS", "X", "close", "get free", "trial", "do not get free", "buy", "sign up", "spam")
-	
+
 func trial():
 	# code for signing up for trial, autopay after 30 days
 	pass
@@ -21,13 +21,13 @@ func buy():
 func spam():
 	# func for sending 100 spam mails
 	pass
-	
+
 func file_save(content, path):
 	var file = File.new()
 	file.open(path, File.WRITE)
 	file.store_string(content)
 	file.close()
-	
+
 func file_load(path):
 	var file = File.new()
 	file.open(path, File.READ)
