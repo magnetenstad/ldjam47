@@ -3,7 +3,7 @@ var cancel_f
 var select1_f
 var select2_f
 var select3_f
-var main
+var MAIN
 
 func set_variables(header, body, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f):
 	$VBoxContainer/PanelContainer/HBoxContainer2/Header.text = header
@@ -34,7 +34,7 @@ func run_function(function):
 	elif function == "":
 		pass
 	else:
-		main.call(function)
+		MAIN.call(function)
 
 func _on_CancelButton_pressed():
 	run_function(cancel_f)
