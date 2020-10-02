@@ -24,15 +24,8 @@ func close():
 	queue_free()
 
 func run_function(function):
-	if "(" in function:
-		var function_args = function.substr(function.find("(")+1, function.find(")")-function.find("(")-1)
-		function_args = function_args.split(",")
-		function = function.substr(0, function.find("("))
-		main.callv(function, function_args)
-	elif function == "close":
+	if function == "close":
 		close()
-	elif function == "":
-		pass
 	else:
 		main.call(function)
 
