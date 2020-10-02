@@ -20,29 +20,25 @@ func set_variables(header, cancel, _cancel_f, select1, _select1_f, select2, _sel
 	
 
 func close():
-	# close
-	return
+	queue_free()
 
+func run_function(function):
+	if function == "close":
+		close()
+	else:
+		main.call(function)
 
 func _on_CancelButton_pressed():
-	if cancel_f == "close":
-		close()
-	main.call(cancel_f)
+	run_function(cancel_f)
 
 
 func _on_Select1_pressed():
-	if select1_f == "close":
-		close()
-	main.call(select1_f)
+	run_function(select1_f)
 
 
 func _on_Select2_pressed():
-	if select2_f == "close":
-		close()
-	main.call(select2_f)
+	run_function(select2_f)
 
 
 func _on_Select3_pressed():
-	if select3_f == "close":
-		close()
-	main.call(select3_f)
+	run_function(select3_f)
