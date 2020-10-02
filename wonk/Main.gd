@@ -8,10 +8,10 @@ func _ready():
 	theme_manager.init()
 	#var file = File.new()
 	set_theme(theme_manager.themes[0])
-	mail_add()
-	mail_add()
-	mail_add()
-	mail_add()
+	mail_add("Google", ":)")
+	mail_add("Mum", "Have are you doing, darling?")
+	mail_add("uncleJoe123", "Wanna meet up some time?")
+	mail_add("Duolingo", " You have not studied.")
 
 func file_save(content, path):
 	var file = File.new()
@@ -36,10 +36,12 @@ func json_save(content, path):
 func json_load(path):
 	return parse_json(file_load(path))
 
-func mail_add():
+func mail_add(header, content):
 	var mail = MAIL.instance()
-	$HBoxContainer/PanelContainer/VBoxContainer.add_child(mail)
-
+	mail.get_child(0).get_child(0).text = header
+	mail.get_child(0).get_child(1).text = content
+	$HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer.add_child(mail)
+	
 func popup_show(x, y, header, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f):
 	var popup = POPUP.instance()
 	popup.set_variables(header, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f)
