@@ -3,5 +3,10 @@
 		"from": "SENDER",
 		"subject": "TITLE",
 		"body": "BODY"
+	},
+	"BuyProduct1": {
+		"from": "K. Fahr",
+		"subject": "Thank you for buying our product.",
+		"body": "You have paid a total of $100 for our product. Thank you for paying this sum."
 	}
 }

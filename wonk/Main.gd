@@ -6,6 +6,7 @@ onready var PF = preload("PopupFunctions.gd").new(MAIN)
 const MAIL = preload("Mail.tscn")
 const POPUP = preload("res://Popup.tscn")
 var balance = 10000
+var content
 
 func _ready():
 	TM.init()
@@ -16,7 +17,7 @@ func _ready():
 #	mail_add("Duolingo", " You have not studied.")
 	PF.popup1()
 	add_balance(0)
-	var content = json_load("src/content.json")
+	content = json_load("src/content.json")
 	mail_add(content["0"])
 
 func file_save(content, path):

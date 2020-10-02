@@ -12,8 +12,8 @@ func popup_show(x, y, header, body, cancel, _cancel_f, select1, _select1_f, sele
 	var popup = POPUP.instance()
 	popup.set_variables(header, body, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f)
 	popup.set_position(Vector2(x, y))
-	popup.main = main.PF
-	main.add_child(popup)
+	popup.MAIN = MAIN.PF
+	MAIN.add_child(popup)
 	last_popup_x += 10
 	last_popup_y += 10
 
@@ -31,8 +31,8 @@ func trial():
 	# code for signing up for trial, autopay after 30 days
 	pass
 func buy(n):
-	main.mail_add("J. Simpson", "Thank you for buying our product. Price: $" + str(n))
-	main.add_balance(-float(n))
+	MAIN.mail_add(MAIN.content["BuyProduct1"])
+	MAIN.add_balance(-float(n))
 func spam():
 	# func for sending 100 spam mails
 	pass

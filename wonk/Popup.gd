@@ -28,7 +28,7 @@ func run_function(function):
 		var function_args = function.substr(function.find("(")+1, function.find(")")-function.find("(")-1)
 		function_args = function_args.split(",")
 		function = function.substr(0, function.find("("))
-		main.callv(function, function_args)
+		MAIN.callv(function, function_args)
 	elif function == "close":
 		close()
 	elif function == "":
