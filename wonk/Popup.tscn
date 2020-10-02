@@ -51,42 +51,45 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "X"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Body" type="RichTextLabel" parent="VBoxContainer"]
 margin_top = 43.0
-margin_right = 530.0
-margin_bottom = 203.0
+margin_right = 486.0
+margin_bottom = 199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 text = "popup body"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 207.0
-margin_right = 530.0
-margin_bottom = 247.0
+margin_top = 203.0
+margin_right = 486.0
+margin_bottom = 242.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Select1" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 263.0
-margin_bottom = 40.0
+margin_right = 241.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "button1"
 
 [node name="Select2" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 267.0
-margin_right = 530.0
-margin_bottom = 40.0
+margin_left = 245.0
+margin_right = 486.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "button2"
 
 [node name="Select3" type="Button" parent="VBoxContainer"]
-margin_top = 251.0
-margin_right = 530.0
-margin_bottom = 291.0
+margin_top = 246.0
+margin_right = 486.0
+margin_bottom = 286.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "button3"
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer2/CancelButton" to="." method="_on_CancelButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Select1" to="." method="_on_Select1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Select2" to="." method="_on_Select2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Select3" to="." method="_on_Select3_pressed"]
