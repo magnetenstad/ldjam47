@@ -1,7 +1,7 @@
 extends Control
 
 onready var theme_manager = ThemeManager.new()
-onready var MAIL = preload("Mail.tscn")
+const MAIL = preload("Mail.tscn")
 const POPUP = preload("res://Popup.tscn")
 
 func _ready():
