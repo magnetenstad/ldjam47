@@ -19,7 +19,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="From" type="Label" parent="VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 298.0
 size_flags_horizontal = 3
@@ -28,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="Subject" type="Label" parent="VBoxContainer"]
 margin_top = 302.0
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -37,4 +37,10 @@ size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Body" type="Label" parent="VBoxContainer"]
+visible = false
+margin_top = 586.0
+margin_right = 1024.0
+margin_bottom = 600.0
 [connection signal="pressed" from="." to="." method="_on_Mail_pressed"]

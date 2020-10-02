@@ -1,8 +1,7 @@
 extends Button
 
-func _ready():
-	pass
-	
+var MAIN
+
 func _on_Mail_pressed():
-	pass
+	MAIN.get_node("HBoxContainer/PanelContainer2/Body").text = $VBoxContainer/Body.text
 	

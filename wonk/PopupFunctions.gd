@@ -3,17 +3,17 @@ extends Node
 const POPUP = preload("res://Popup.tscn")
 var last_popup_x = 0
 var last_popup_y = 0
-var main
+var MAIN
 
 func _init(_main):
-	main = _main
+	MAIN = _main
 
 func popup_show(x, y, header, body, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f):
 	var popup = POPUP.instance()
 	popup.set_variables(header, body, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f)
 	popup.set_position(Vector2(x, y))
-	popup.main = main
-	popup.main.add_child(popup)
+	popup.MAIN = MAIN
+	popup.MAIN.add_child(popup)
 	
 func popup1():
 	popup_show(last_popup_x+10, last_popup_y+10, "FREE ANTIVIRUS", "We have to you give free antivirus!!! defnitely remove all virus.", "X", "close", "get free", "trial", "do not get free", "buy", "sign up", "popup_sign_up")
