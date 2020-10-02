@@ -3,8 +3,9 @@
 [ext_resource path="res://Popup.gd" type="Script" id=1]
 
 [node name="Popup" type="PanelContainer"]
-margin_right = 544.0
-margin_bottom = 305.0
+margin_right = 500.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 500, 300 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -13,13 +14,13 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 537.0
-margin_bottom = 298.0
+margin_right = 493.0
+margin_bottom = 293.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-margin_right = 530.0
+margin_right = 486.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -27,13 +28,13 @@ size_flags_vertical = 3
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 523.0
+margin_right = 479.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Header" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer2"]
-margin_right = 438.0
+margin_right = 401.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -43,8 +44,8 @@ align = 1
 valign = 1
 
 [node name="CancelButton" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer2"]
-margin_left = 442.0
-margin_right = 516.0
+margin_left = 405.0
+margin_right = 472.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -52,39 +53,39 @@ text = "X"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 margin_top = 43.0
-margin_right = 530.0
-margin_bottom = 202.0
+margin_right = 486.0
+margin_bottom = 199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 text = "popup body"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 206.0
-margin_right = 530.0
-margin_bottom = 245.0
+margin_top = 203.0
+margin_right = 486.0
+margin_bottom = 242.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Select1" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 263.0
+margin_right = 241.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "button1"
 
 [node name="Select2" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 267.0
-margin_right = 530.0
+margin_left = 245.0
+margin_right = 486.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "button2"
 
 [node name="Select3" type="Button" parent="VBoxContainer"]
-margin_top = 249.0
-margin_right = 530.0
-margin_bottom = 291.0
+margin_top = 246.0
+margin_right = 486.0
+margin_bottom = 286.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "button3"
