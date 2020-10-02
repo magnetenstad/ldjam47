@@ -5,11 +5,13 @@ onready var MAIL = preload("Mail.tscn")
 
 func _ready():
 	theme_manager.init()
-	var file = File.new()
+	#var file = File.new()
 	set_theme(theme_manager.themes[0])
 	mail_add()
 	mail_add()
-	
+	mail_add()
+	mail_add()
+
 func file_save(content, path):
 	var file = File.new()
 	file.open(path, File.WRITE)

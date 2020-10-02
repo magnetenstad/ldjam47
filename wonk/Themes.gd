@@ -90,7 +90,8 @@ func theme_create(C_BUTTON, C_BUTTON_HOVER, C_BUTTON_FONT, C_LABEL, C_LINE_EDIT,
 	_theme.set_color("selection_color", "LineEdit", Color(0.2, 0.2, 0.2, 0.5))
 	
 	# PANEL CONTAINER
-	var _box_panel_container = styleboxflat_create(C_PANEL_CONTAINER, 20, 0)
+	var _box_panel_container = styleboxflat_create(C_PANEL_CONTAINER, 20, 4)
+	_box_panel_container.border_color = C_BACKGROUND
 	_theme.set_stylebox("panel", "PanelContainer", _box_panel_container)
 
 	# PANEL
