@@ -2,6 +2,7 @@ extends Control
 
 onready var theme_manager = ThemeManager.new()
 onready var MAIL = preload("Mail.tscn")
+const POPUP = preload("res://Popup.tscn")
 
 func _ready():
 	theme_manager.init()
@@ -36,3 +37,8 @@ func json_load(path):
 func mail_add():
 	var mail = MAIL.instance()
 	$HBoxContainer/PanelContainer/VBoxContainer.add_child(mail)
+
+func popup_show(x, y, header, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f):
+	var popup = POPUP.instance()
+	popup.set_variables(header, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f)
+	popup.set_position(x, y)
