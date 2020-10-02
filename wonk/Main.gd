@@ -10,6 +10,17 @@ func _ready():
 	set_theme(theme_manager.themes[0])
 	mail_add()
 	mail_add()
+	popup_show(200, 200, "FREE ANTIVIRUS", "X", "close", "get free", "trial", "do not get free", "buy", "sign up", "spam")
+	
+func trial():
+	# code for signing up for trial, autopay after 30 days
+	pass
+func buy():
+	# code for buying
+	pass
+func spam():
+	# func for sending 100 spam mails
+	pass
 	
 func file_save(content, path):
 	var file = File.new()
@@ -41,4 +52,5 @@ func mail_add():
 func popup_show(x, y, header, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f):
 	var popup = POPUP.instance()
 	popup.set_variables(header, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f)
-	popup.set_position(x, y)
+	popup.set_position(Vector2(x, y))
+	popup.main = get_tree().root.get_child(0)
