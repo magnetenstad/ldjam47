@@ -12,7 +12,7 @@ func popup_show(x, y, header, body, cancel, _cancel_f, select1, _select1_f, sele
 	var popup = POPUP.instance()
 	popup.set_variables(header, body, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f)
 	popup.set_position(Vector2(x, y))
-	popup.MAIN = MAIN.PF
+	popup.MAIN = self
 	MAIN.add_child(popup)
 	last_popup_x += 10
 	last_popup_y += 10
