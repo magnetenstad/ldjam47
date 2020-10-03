@@ -34,7 +34,7 @@ func close():
 func run_function(function):
 	if "(" in function:
 		var line = function.split("(")
-		MAIN.callv(line[0], line[1].replace(")", "").split(","))
+		MAIN.callv(line[0], line[1].trim_suffix(")").split(","))
 	elif function == "close":
 		close()
 	elif function == "":

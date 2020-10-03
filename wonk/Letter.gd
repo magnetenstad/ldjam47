@@ -14,8 +14,17 @@ func _on_ButtonDiscard_pressed():
 	
 func _on_ButtonSend_pressed():
 	for key in content.keys():
-		if key in $TextEdit.text:
+		var run
+		if "," in key:
+			run = true
+			for k in key.split(","):
+				if not k in $TextEdit.text:
+					run = false
+		else:
+			run = key in $TextEdit.text
+		
+		if run:
 			var line = content[key].split("(")
-			callv(line[0], line[1].replace(")", "").split(","))
+			callv(line[0], line[1].trim_suffix(")").split(","))
 	MAIN.focus("World")
 	
