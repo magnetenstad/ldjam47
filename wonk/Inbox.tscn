@@ -97,3 +97,4 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 673.0
 margin_bottom = 523.0
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

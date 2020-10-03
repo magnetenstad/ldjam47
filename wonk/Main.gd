@@ -6,7 +6,8 @@ func _ready():
 	TM.init()
 	$Inbox.set_theme(TM.themes[0])
 	$Letter.set_theme(TM.themes[0])	
-
+	focus("Inbox")
+	
 func file_save(content, path):
 	var file = File.new()
 	file.open(path, File.WRITE)
@@ -33,4 +34,4 @@ func json_load(path):
 func focus(scene):
 	for child in get_children():
 		child.visible = false
-	get_child(scene).visible = true
+	get_node(scene).visible = true

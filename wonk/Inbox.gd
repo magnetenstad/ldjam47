@@ -27,3 +27,6 @@ func mail_add(dict):
 func add_balance(n):
 	balance += n
 	$HBoxContainer/VBoxContainer/BalanceCont/BalanceLabel.text = "$" + str(balance)
+
+func _on_Button_pressed():
+	MAIN.focus("World")

@@ -27,17 +27,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 834.066
-margin_top = 537.725
-margin_right = 994.066
-margin_bottom = 594.725
-text = "Send"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button2" type="Button" parent="."]
+[node name="ButtonDiscard" type="Button" parent="."]
 margin_left = 59.4961
 margin_top = 544.875
 margin_right = 219.496
@@ -46,3 +36,14 @@ text = "Discard"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ButtonSend" type="Button" parent="."]
+margin_left = 834.066
+margin_top = 537.725
+margin_right = 994.066
+margin_bottom = 594.725
+text = "Send"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ButtonDiscard" to="." method="_on_ButtonDiscard_pressed"]
