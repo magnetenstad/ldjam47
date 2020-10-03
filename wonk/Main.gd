@@ -6,7 +6,8 @@ func _ready():
 	TM.init()
 	$Inbox.set_theme(TM.themes[0])
 	$Letter.set_theme(TM.themes[0])	
-	#focus("Inbox")
+	$World/PanelContainer.set_theme(TM.themes[0])	
+	focus("Inbox")
 	
 func file_save(content, path):
 	var file = File.new()
@@ -35,3 +36,7 @@ func focus(scene):
 	for child in get_children():
 		child.visible = false
 	get_node(scene).visible = true
+	if scene == "World":
+		$World.zoom = Vector2(0.167, 0.167)
+	else:
+		$World.zoom = Vector2(1, 1)
