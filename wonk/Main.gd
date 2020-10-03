@@ -30,3 +30,7 @@ func json_save(content, path):
 func json_load(path):
 	return parse_json(file_load(path))
 	
+func focus(scene):
+	for child in get_children():
+		child.visible = false
+	get_child(scene).visible = true
