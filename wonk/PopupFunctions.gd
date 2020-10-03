@@ -18,7 +18,7 @@ func popup_show(x, y, header, body, cancel, _cancel_f, select1, _select1_f, sele
 	last_popup_y += 10
 
 func popup1():
-	popup_show(last_popup_x, last_popup_y, "FREE ANTIVIRUS", "We have to you give free antivirus!!! defnitely remove all virus.", "X", "close", "get free", "trial", "do not get free", "buy(10)", "sign up", "popup_sign_up")
+	popup_show(last_popup_x, last_popup_y, "FREE ANTIVIRUS", "We have to you give free antivirus!!! defnitely remove all virus.", "X", "close", "get free", "trial", "do not get free", "buy(100)", "sign up", "popup_sign_up")
 
 func popup_sign_up():
 	popup_show(last_popup_x, last_popup_y, "SIGN UP", "Ah thank YOU FOr trying our product!! woo", "X", "close", "sign up with email", "buy(10)", "sign up with phone", "buy(10)", "do not sign up", "spam_sad")
