@@ -11,9 +11,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Node2D" parent="."]
-
-[node name="letter_background" type="Sprite" parent="Control"]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 509.99, 331.495 )
 scale = Vector2( 0.689239, 0.606114 )
 texture = ExtResource( 1 )
@@ -25,6 +23,26 @@ margin_left = 298.0
 margin_top = 185.0
 margin_right = -355.0
 margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 834.066
+margin_top = 537.725
+margin_right = 994.066
+margin_bottom = 594.725
+text = "Send"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 59.4961
+margin_top = 544.875
+margin_right = 219.496
+margin_bottom = 601.875
+text = "Discard"
 __meta__ = {
 "_edit_use_anchors_": false
 }

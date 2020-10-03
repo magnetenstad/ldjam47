@@ -21,8 +21,8 @@ func mail_add(dict):
 	mail.get_child(0).get_child(0).text = dict["from"]
 	mail.get_child(0).get_child(1).text = dict["subject"]
 	mail.get_child(0).get_child(2).text = dict["body"]
-	$HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer.add_child(mail)
-	$HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer.move_child(mail, 0)
+	$HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer.add_child(mail)
+	$HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer.move_child(mail, 0)
 	
 func add_balance(n):
 	balance += n
