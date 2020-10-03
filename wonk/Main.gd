@@ -1,5 +1,4 @@
 extends Node
-
 onready var TM = ThemeManager.new()
 
 func _ready():
