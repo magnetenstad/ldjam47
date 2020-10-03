@@ -46,7 +46,6 @@ func json_load(path):
 func mail_add(dict):
 	var mail = MAIL.instance()
 	mail.MAIN = MAIN
-	print(dict)
 	mail.get_child(0).get_child(0).text = dict["from"]
 	mail.get_child(0).get_child(1).text = dict["subject"]
 	mail.get_child(0).get_child(2).text = dict["body"]
