@@ -47,3 +47,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="ButtonDiscard" to="." method="_on_ButtonDiscard_pressed"]
+[connection signal="pressed" from="ButtonSend" to="." method="_on_ButtonSend_pressed"]

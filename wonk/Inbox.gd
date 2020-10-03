@@ -10,7 +10,7 @@ var balance = 10000
 var content
 
 func _ready():
-	content = MAIN.json_load("src/content.json")
+	content = MAIN.json_load("src/inbox.json")
 	add_balance(0)
 	PF.popup1()
 	mail_add(content["0"])

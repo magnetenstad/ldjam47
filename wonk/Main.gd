@@ -6,7 +6,7 @@ func _ready():
 	TM.init()
 	$Inbox.set_theme(TM.themes[0])
 	$Letter.set_theme(TM.themes[0])	
-	focus("Inbox")
+	#focus("Inbox")
 	
 func file_save(content, path):
 	var file = File.new()

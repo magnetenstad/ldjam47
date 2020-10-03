@@ -21,7 +21,6 @@ func set_variables(header, body, cancel, _cancel_f, select1, _select1_f, select2
 	$VBoxContainer/HBoxContainer/Select2.text = select2
 	$VBoxContainer/Select3.text = select3
 	
-	
 	cancel_f = _cancel_f
 	select1_f = _select1_f
 	select2_f = _select2_f
@@ -34,10 +33,8 @@ func close():
 
 func run_function(function):
 	if "(" in function:
-		var function_args = function.substr(function.find("(")+1, function.find(")")-function.find("(")-1)
-		function_args = function_args.split(",")
-		function = function.substr(0, function.find("("))
-		MAIN.callv(function, function_args)
+		var line = function.split("(")
+		MAIN.callv(line[0], line[1].replace(")", "").split(","))
 	elif function == "close":
 		close()
 	elif function == "":
