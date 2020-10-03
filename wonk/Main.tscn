@@ -7,7 +7,7 @@
 [node name="Main" type="Node"]
 script = ExtResource( 4 )
 
-[node name="Inbox" parent="." instance=ExtResource( 2 )]
-
 [node name="Letter" parent="." instance=ExtResource( 3 )]
 visible = false
+
+[node name="Inbox" parent="." instance=ExtResource( 2 )]
