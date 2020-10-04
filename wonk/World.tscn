@@ -25,10 +25,10 @@ extents = Vector2( 24, 16 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 24 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 8 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -41,7 +41,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 12, 8 )
 
 [node name="World" type="Camera2D"]
@@ -146,7 +146,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Grammophone"]
 position = Vector2( 0, 16 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -167,14 +167,14 @@ __meta__ = {
 position = Vector2( 192.162, 94.2598 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Player"]
-frames = SubResource( 5 )
+frames = SubResource( 6 )
 animation = "walk"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player"]
 position = Vector2( 0, 16 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="PlayerArea" type="Area2D" parent="YSort/Player"]
 __meta__ = {
@@ -183,7 +183,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player/PlayerArea"]
 position = Vector2( 0, 16 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 margin_left = 233.566

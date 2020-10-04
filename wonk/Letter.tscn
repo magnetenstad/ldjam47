@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/letter_background.jpg" type="Texture" id=1]
+[ext_resource path="res://src/letter_background.png" type="Texture" id=1]
 [ext_resource path="res://Letter.gd" type="Script" id=2]
 
 [node name="Letter" type="Control"]
@@ -11,37 +11,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 961.818, 541.586 )
-scale = Vector2( 1.28598, 0.992016 )
+[node name="letter_background" type="Sprite" parent="."]
+scale = Vector2( 6, 6 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="TextEdit" type="TextEdit" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 611.0
-margin_top = 290.0
-margin_right = -801.0
-margin_bottom = -156.0
+margin_left = 622.0
+margin_top = 241.0
+margin_right = -624.0
+margin_bottom = -43.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonDiscard" type="Button" parent="."]
-margin_left = 613.87
-margin_top = 943.355
-margin_right = 773.87
-margin_bottom = 1000.35
+margin_left = 338.219
+margin_top = 982.165
+margin_right = 498.219
+margin_bottom = 1039.16
 text = "Discard"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonSend" type="Button" parent="."]
-margin_left = 949.45
-margin_top = 939.145
-margin_right = 1109.45
-margin_bottom = 996.145
+margin_left = 1451.99
+margin_top = 991.887
+margin_right = 1611.99
+margin_bottom = 1048.89
 text = "Send"
 __meta__ = {
 "_edit_use_anchors_": false

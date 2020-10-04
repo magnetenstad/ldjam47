@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grandma_walk.png-e175c31233c72a37ed2f952a187f877d.stex"
+path="res://.import/letter_background.png-b6240595111febfa25aefe2fc4000ca9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/grandma_walk.png"
-dest_files=[ "res://.import/grandma_walk.png-e175c31233c72a37ed2f952a187f877d.stex" ]
+source_file="res://src/letter_background.png"
+dest_files=[ "res://.import/letter_background.png-b6240595111febfa25aefe2fc4000ca9.stex" ]
 
 [params]
 
