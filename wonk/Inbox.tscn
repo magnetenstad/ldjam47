@@ -117,8 +117,5 @@ margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Reply"
-
-[node name="Time" type="Timer" parent="."]
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ReplyButton" to="." method="_on_ReplyButton_pressed"]
-[connection signal="timeout" from="Time" to="." method="_on_Time_timeout"]

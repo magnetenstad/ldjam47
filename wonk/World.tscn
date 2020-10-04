@@ -187,9 +187,3 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-[connection signal="area_entered" from="Desk/DeskArea" to="." method="_on_DeskArea_area_entered"]
-[connection signal="area_exited" from="Desk/DeskArea" to="." method="_on_DeskArea_area_exited"]
-[connection signal="area_entered" from="LetterDesk/LetterDeskArea" to="." method="_on_LetterDeskArea_area_entered"]
-[connection signal="area_exited" from="LetterDesk/LetterDeskArea" to="." method="_on_LetterDeskArea_area_exited"]
-[connection signal="area_entered" from="Grammophone/GrammophoneArea" to="." method="_on_GrammophoneArea_area_entered"]
-[connection signal="area_exited" from="Grammophone/GrammophoneArea" to="." method="_on_GrammophoneArea_area_exited"]
