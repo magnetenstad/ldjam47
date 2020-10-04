@@ -10,7 +10,7 @@ var overlaps = []
 const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
 
 func _ready():
-	pass
+	letter_receive("Dear Mrs. Wonk\n\nThank you for ordering a computer and internet package.\nWe hope you enjoy your new products.")
 
 func get_input():
 	var temp = velocity.x
@@ -103,3 +103,4 @@ func letter_receive(text):
 	physical_letter.text = text
 	self.add_child(physical_letter)
 	physical_letter.position = Vector2(160, 160)
+	MAIN.get_node("LetterArrivesSound").play()
