@@ -3,7 +3,7 @@
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://src/grandma.png" type="Texture" id=2]
 [ext_resource path="res://src/table_inbox.png" type="Texture" id=4]
-[ext_resource path="res://src/table_letterpng.png" type="Texture" id=5]
+[ext_resource path="res://src/table_letter.png" type="Texture" id=5]
 [ext_resource path="res://src/doormat.png" type="Texture" id=6]
 [ext_resource path="res://src/background.png" type="Texture" id=7]
 [ext_resource path="res://src/item_letter.png" type="Texture" id=8]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/grandma_walk_3.png" type="Texture" id=11]
 [ext_resource path="res://src/grandma_walk_4.png" type="Texture" id=12]
 [ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=13]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 18 )
