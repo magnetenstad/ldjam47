@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://src/grandma.png" type="Texture" id=2]
-[ext_resource path="res://Barrier.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/table_inbox.png" type="Texture" id=4]
 [ext_resource path="res://src/table_letterpng.png" type="Texture" id=5]
 [ext_resource path="res://src/doormat.png" type="Texture" id=6]
@@ -21,15 +20,15 @@ extents = Vector2( 24, 18 )
 extents = Vector2( 24, 24 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 24, 18 )
+extents = Vector2( 24, 16 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 24 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 21.8369, 19.6522 )
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16, 8 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -42,7 +41,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 12, 8 )
 
 [node name="World" type="Camera2D"]
@@ -51,26 +50,6 @@ current = true
 zoom = Vector2( 0.167, 0.167 )
 script = ExtResource( 1 )
 
-[node name="Barrier" parent="." instance=ExtResource( 3 )]
-position = Vector2( 160.25, 26.4633 )
-scale = Vector2( 320, 40 )
-
-[node name="BarrierTop" parent="." instance=ExtResource( 3 )]
-position = Vector2( 391.098, -49.5576 )
-scale = Vector2( 1000, 100 )
-
-[node name="BarrierBottom" parent="." instance=ExtResource( 3 )]
-position = Vector2( 303.489, 229.992 )
-scale = Vector2( 1000, 100 )
-
-[node name="BarrierLeft" parent="." instance=ExtResource( 3 )]
-position = Vector2( -49.3141, 267.785 )
-scale = Vector2( 100, 600 )
-
-[node name="BarrierRight" parent="." instance=ExtResource( 3 )]
-position = Vector2( 370.605, 148.372 )
-scale = Vector2( 100, 600 )
-
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 160, 90 )
 texture = ExtResource( 7 )
@@ -78,121 +57,139 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Doormat" type="Sprite" parent="."]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Doormat" type="Sprite" parent="YSort"]
 position = Vector2( 160, 164 )
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Letter" type="Sprite" parent="."]
+[node name="Letter" type="Sprite" parent="YSort"]
 position = Vector2( 98.3543, 85.0894 )
 texture = ExtResource( 8 )
 
-[node name="Desk" type="StaticBody2D" parent="."]
+[node name="Desk" type="StaticBody2D" parent="YSort"]
 position = Vector2( 136, 42 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Desk"]
+[node name="Sprite" type="Sprite" parent="YSort/Desk"]
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Desk"]
 position = Vector2( 0, 7 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DeskArea" type="Area2D" parent="Desk"]
+[node name="DeskArea" type="Area2D" parent="YSort/Desk"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk/DeskArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Desk/DeskArea"]
 position = Vector2( 0, 13 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="LetterDesk" type="StaticBody2D" parent="."]
+[node name="LetterDesk" type="StaticBody2D" parent="YSort"]
 position = Vector2( 232, 42 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Sprite" type="Sprite" parent="LetterDesk"]
+[node name="Sprite" type="Sprite" parent="YSort/LetterDesk"]
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LetterDesk"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/LetterDesk"]
 position = Vector2( 0, 7 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="LetterDeskArea" type="Area2D" parent="LetterDesk"]
+[node name="LetterDeskArea" type="Area2D" parent="YSort/LetterDesk"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="LetterDesk/LetterDeskArea"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/LetterDesk/LetterDeskArea"]
 position = Vector2( 0, 13 )
 shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Grammophone" type="StaticBody2D" parent="."]
-position = Vector2( 289.147, 139.749 )
+[node name="Grammophone" type="StaticBody2D" parent="YSort"]
+position = Vector2( 64, 120 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Grammophone"]
+[node name="Sprite" type="Sprite" parent="YSort/Grammophone"]
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grammophone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Grammophone"]
+position = Vector2( 0, 16 )
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GrammophoneArea" type="Area2D" parent="YSort/Grammophone"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Grammophone/GrammophoneArea"]
+position = Vector2( 0, 16 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GrammophoneArea" type="Area2D" parent="Grammophone"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grammophone/GrammophoneArea"]
-position = Vector2( 0.584961, 0.0603571 )
-shape = SubResource( 5 )
-
-[node name="Player" type="KinematicBody2D" parent="."]
+[node name="Player" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 192.162, 94.2598 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = SubResource( 6 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Player"]
+frames = SubResource( 5 )
 animation = "walk"
+frame = 3
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player"]
 position = Vector2( 0, 16 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
-[node name="PlayerArea" type="Area2D" parent="Player"]
+[node name="PlayerArea" type="Area2D" parent="YSort/Player"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player/PlayerArea"]
 position = Vector2( 0, 16 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
-margin_left = 56.3399
-margin_top = 135.094
-margin_right = 256.34
-margin_bottom = 165.094
+margin_left = 233.566
+margin_top = 148.436
+margin_right = 315.566
+margin_bottom = 176.436
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -200,8 +197,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 193.0
-margin_bottom = 23.0
+margin_right = 75.0
+margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1

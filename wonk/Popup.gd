@@ -5,9 +5,9 @@ var select2_f
 var select3_f
 var MAIN
 var hover = false
-var mouse_position
+var mouse_position = Vector2(0, 0)
 var mouse_offset
-var mouse_click
+var mouse_click = false
 
 func _process(_delta):
 	if hover and mouse_click:

@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var MAIN = get_parent()
-onready var PLAYER = $Player
+onready var PLAYER = $YSort/Player
 
 var velocity = Vector2()
 var speed = 10
@@ -30,15 +30,17 @@ func get_input():
 		velocity.y *= 0.8
 
 	if velocity.length() < 10:
-		$Player/AnimatedSprite.animation = "idle"
+		$YSort/Player/AnimatedSprite.animation = "idle"
 	else:
-		$Player/AnimatedSprite.animation = "walk"
-		$Player/AnimatedSprite.flip_h = velocity.x < 0
+		$YSort/Player/AnimatedSprite.animation = "walk"
+		$YSort/Player/AnimatedSprite.flip_h = velocity.x < 0
 
 func _physics_process(delta):
 	if self.visible:
 		get_input()
 		velocity = PLAYER.move_and_slide(velocity)
+		PLAYER.position.x = clamp(PLAYER.position.x, 0 + 12, 320 - 12)
+		PLAYER.position.y = clamp(PLAYER.position.y, 0 + 3 * 16 - 8, 180 - 24)
 
 func display_label(text):
 	if text == "":
@@ -63,7 +65,7 @@ func interacts(event):
 
 func _input(event):
 	if self.visible:
-		var overlapping_objects = $Player/PlayerArea.get_overlapping_areas()
+		var overlapping_objects = $YSort/Player/PlayerArea.get_overlapping_areas()
 		var overlaps = {}
 		for o in overlapping_objects:
 			overlaps[o.name] = o
@@ -80,7 +82,7 @@ func _input(event):
 
 func _process(delta):
 	if self.visible:
-		var overlapping_objects = $Player/PlayerArea.get_overlapping_areas()
+		var overlapping_objects = $YSort/Player/PlayerArea.get_overlapping_areas()
 		var overlaps = {}
 		for o in overlapping_objects:
 			overlaps[o.name] = o

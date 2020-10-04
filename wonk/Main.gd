@@ -47,7 +47,7 @@ func focus(scene):
 			child.visible = false
 	get_node(scene).visible = true
 	if scene == "World":
-		$World.zoom = Vector2(0.167, 0.167)
+		$World.zoom = Vector2(0.16667, 0.16667)
 	else:
 		$World.zoom = Vector2(1, 1)
 
