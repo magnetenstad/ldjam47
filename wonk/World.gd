@@ -1,34 +1,46 @@
 extends Node2D
+
+onready var MAIN = get_parent()
 onready var PLAYER = $Player
+
 var velocity = Vector2()
-var speed = 100
+var speed = 10
+var speed_max = 60
+var overlaps = []
+var dir
 onready var MAIN = get_parent()
 const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
 func get_input():
-	if self.visible:
-		velocity = Vector2.ZERO
-		if Input.is_action_pressed('right'):
-			velocity.x += 1
-		if Input.is_action_pressed('left'):
-			velocity.x -= 1
-		if Input.is_action_pressed('down'):
-			velocity.y += 1
-		if Input.is_action_pressed('up'):
-			velocity.y -= 1
-		velocity = velocity.normalized() * speed
+	var temp = velocity.x
+	if Input.is_action_pressed('right'):
+		velocity.x = min(speed_max, velocity.x + speed)
+	if Input.is_action_pressed('left'):
+		velocity.x = max(-speed_max, velocity.x - speed)
+	if velocity.x == temp:
+		velocity.x *= 0.8
+
+	temp = velocity.y
+	if Input.is_action_pressed('down'):
+		velocity.y = min(speed_max, velocity.y + speed)
+	if Input.is_action_pressed('up'):
+		velocity.y = max(-speed_max, velocity.y - speed)
+	if velocity.y == temp:
+		velocity.y *= 0.8
+
+	if velocity.length() < 10:
+		$Player/AnimatedSprite.animation = "idle"
+	else:
+		$Player/AnimatedSprite.animation = "walk"
+		$Player/AnimatedSprite.flip_h = velocity.x < 0
 
 func _physics_process(delta):
-	get_input()
-	velocity = PLAYER.move_and_slide(velocity)
+	if self.visible:
+		get_input()
+		velocity = PLAYER.move_and_slide(velocity)
 
 func display_label(text):
 	if text == "":
@@ -53,7 +65,7 @@ func _process(delta):
 		var overlaps = {}
 		for o in overlapping_objects:
 			overlaps[o.name] = o
-		
+
 		if "DeskArea" in overlaps.keys():
 			display_label("Computer (e)")
 			if Input.is_action_pressed("interact"):

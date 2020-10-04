@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://src/person.png" type="Texture" id=2]
+[ext_resource path="res://src/grandma.png" type="Texture" id=2]
 [ext_resource path="res://Barrier.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/table_inbox.png" type="Texture" id=4]
 [ext_resource path="res://src/table_letterpng.png" type="Texture" id=5]
@@ -9,6 +9,10 @@
 [ext_resource path="res://src/background.png" type="Texture" id=7]
 [ext_resource path="res://src/item_letter.png" type="Texture" id=8]
 [ext_resource path="res://src/gramophone.png" type="Texture" id=9]
+[ext_resource path="res://src/grandma_walk_2.png" type="Texture" id=10]
+[ext_resource path="res://src/grandma_walk_3.png" type="Texture" id=11]
+[ext_resource path="res://src/grandma_walk_4.png" type="Texture" id=12]
+[ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.5086, 15.9215 )
@@ -19,7 +23,20 @@ extents = Vector2( 21.8369, 19.6522 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 6.88873, 4.15316 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk",
+"speed": 4.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 7.79251, 18.5506 )
 
 [node name="World" type="Camera2D"]
@@ -148,11 +165,11 @@ position = Vector2( 192.162, 94.2598 )
 position = Vector2( -0.389925, 12.5426 )
 shape = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 4 )
+animation = "walk"
+frame = 2
+playing = true
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
 __meta__ = {
@@ -160,7 +177,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
