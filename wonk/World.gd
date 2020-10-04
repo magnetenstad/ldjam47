@@ -39,16 +39,17 @@ func display_label(text):
 		$PanelContainer/Label.text = text
 
 func _process(delta):
-	if "Desk" in overlaps:
-		display_label("Computer (e)")
-		if Input.is_action_pressed("interact"):
-			MAIN.focus("Inbox")
-	elif "LetterDesk" in overlaps:
-		display_label("Letters (e)")
-		if Input.is_action_pressed("interact"):
-			MAIN.focus("Letter")
-	else:
-		display_label("")
+	if self.visible:
+		if "Desk" in overlaps:
+			display_label("Computer (e)")
+			if Input.is_action_pressed("interact"):
+				MAIN.focus("Inbox")
+		elif "LetterDesk" in overlaps:
+			display_label("Letters (e)")
+			if Input.is_action_pressed("interact"):
+				MAIN.focus("Letter")
+		else:
+			display_label("")
 		
 
 func _on_DeskArea_area_entered(area):

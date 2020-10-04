@@ -1,10 +1,8 @@
 extends Control
 
 onready var MAIN = get_parent()
+onready var LF = preload("LetterFunctions.gd").new(MAIN.get_node("Inbox"))
 var content
-
-func printprint(string1, string2):
-	print(string1, string2)
 	
 func _ready():
 	content = MAIN.json_load("src/letter.json")
@@ -18,13 +16,13 @@ func _on_ButtonSend_pressed():
 		if "," in key:
 			run = true
 			for k in key.split(","):
-				if not k in $TextEdit.text:
+				if not k in $TextEdit.text.to_lower():
 					run = false
 		else:
-			run = key in $TextEdit.text
+			run = key in $TextEdit.text.to_lower()
 		
 		if run:
 			var line = content[key].split("(")
-			callv(line[0], line[1].trim_suffix(")").split(","))
+			LF.callv(line[0], line[1].trim_suffix(")").split(","))
 	MAIN.focus("World")
 	

@@ -39,3 +39,5 @@ func focus(scene):
 		$World.zoom = Vector2(0.167, 0.167)
 	else:
 		$World.zoom = Vector2(1, 1)
+
+
