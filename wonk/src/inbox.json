@@ -1,12 +1,29 @@
 {
-	"0": {
-		"from": "SENDER",
-		"subject": "TITLE",
-		"body": "BODY"
+	"HelloGrandma": {
+		"from": "Thomas Wonk",
+		"subject": "Hello grandma!",
+		"body": "Finally we got an email set up for you! \n\nRemember, just send me an email any time if you need help with anything. Oh, and watch out for viruses.\n\nCheers, Thomas :)"
 	},
-	"BuyProduct1": {
-		"from": "K. Fahr",
+	"BuyTrompo": {
+		"from": "Nero Consulting",
 		"subject": "Thank you for buying our product.",
-		"body": "You have paid a total of $100 for our product. Thank you for paying this sum."
+		"body": "Dear Aretha Wonk.\nThank you for buying Trompo Antivirus. You have automatically been billed for $100, and you will continue being billed for this sum each week. To cancel your subscription, you must send a letter to our adress at 59128th street, New Dehli. Please note that refund letters must contain your name along with a statement that you want to cancel."
+	},
+	"JavaInfo": {
+		"from": "Oracle",
+		"subject": "Why should I update java?",
+		"body": "You should update java because updating java means we can provide additional services to your computer. Globally, we own more than 200 sharks. Oracle is epic. Being an intern is fucking cool, lol I hope this isn't in prod"
+	},
+
+	"BankSetup": {
+		"from": "Thomas Wonk",
+		"subject": "Your new online bank account",
+		"body": "Hey grandma! Just me again - here are your details for the bank login. \n\nUsername: a.wonk@gmail.com\nPassword:aretha\nPIN: 3914\n\nMake sure to change your password like I showed you - you are very vulnerable to hackers if you keep the temporary password.\n\nLove you, Thomas :)"
+	},
+
+	"SurveyGroups": {
+		"from": "Kito Surveys",
+		"subject": "We need volunteers for the survey groups!",
+		"body": "We need volunteers for our new survey group. You are being contacted because you are in the following target group:\n\nOver 75\nFemale\nHas a computer\nDoes not know matrix multiplication\n\nPlease email us if you are interested in joining the survey group. Tasks involve:\n\nWatching movies and giving feedback\n\nTasting new products from well-known brands\n\nFilling out surveys online\n\nYour feedback is valuable. Please rate this email: bit.ly/clOwn72."
 	}
 }

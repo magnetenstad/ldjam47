@@ -25,69 +25,81 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
-margin_right = 340.0
-margin_bottom = 600.0
+margin_right = 638.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 333.0
-margin_bottom = 593.0
+margin_right = 631.0
+margin_bottom = 1073.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
-margin_right = 326.0
-margin_bottom = 517.0
+margin_right = 624.0
+margin_bottom = 944.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer"]
-margin_right = 326.0
-margin_bottom = 517.0
+margin_right = 624.0
+margin_bottom = 944.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
-margin_top = 521.0
-margin_right = 326.0
-margin_bottom = 586.0
+margin_top = 948.0
+margin_right = 624.0
+margin_bottom = 1066.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Exit"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 344.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = 642.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="BalanceCont" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-margin_right = 680.0
-margin_bottom = 66.0
+[node name="InfoCont" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+margin_right = 1278.0
+margin_bottom = 107.0
 size_flags_horizontal = 11
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BalanceLabel" type="Label" parent="HBoxContainer/VBoxContainer/BalanceCont"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/InfoCont"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 673.0
-margin_bottom = 59.0
+margin_right = 1271.0
+margin_bottom = 100.0
+
+[node name="WeekLabel" type="Label" parent="HBoxContainer/VBoxContainer/InfoCont/HBoxContainer"]
+margin_right = 630.0
+margin_bottom = 93.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+valign = 1
+
+[node name="BalanceLabel" type="Label" parent="HBoxContainer/VBoxContainer/InfoCont/HBoxContainer"]
+margin_left = 634.0
+margin_right = 1264.0
+margin_bottom = 93.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 2
 valign = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 70.0
-margin_right = 680.0
-margin_bottom = 600.0
+margin_top = 111.0
+margin_right = 1278.0
+margin_bottom = 968.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
@@ -95,6 +107,18 @@ size_flags_stretch_ratio = 8.0
 [node name="Body" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 673.0
-margin_bottom = 523.0
+margin_right = 1271.0
+margin_bottom = 850.0
+
+[node name="ReplyButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 972.0
+margin_right = 1278.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Reply"
+
+[node name="Time" type="Timer" parent="."]
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ReplyButton" to="." method="_on_ReplyButton_pressed"]
+[connection signal="timeout" from="Time" to="." method="_on_Time_timeout"]
