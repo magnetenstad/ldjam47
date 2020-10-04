@@ -158,7 +158,7 @@ func theme_create(C_BUTTON, C_BUTTON_HOVER, C_BUTTON_FONT, C_LABEL, C_LINE_EDIT,
 	_theme.set_color("default_color", "RichTextLabel", C_LABEL)
 	
 	# TEXT EDIT
-	var _box_text_edit = styleboxflat_create(C_LINE_EDIT, 20, 20)
+	var _box_text_edit = styleboxflat_create(Color("#d0d0d0"), 0, 0)
 	_theme.set_stylebox("normal", "TextEdit", _box_text_edit)
 	_theme.set_stylebox("focus", "TextEdit", _box_text_edit)
 	_theme.set_color("font_color", "TextEdit", C_LABEL)
