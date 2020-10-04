@@ -1,7 +1,7 @@
 extends Control
 
 onready var MAIN = get_parent()
-onready var LF = preload("LetterFunctions.gd").new(MAIN.get_node("Inbox"))
+onready var LF = preload("LetterFunctions.gd").new(MAIN)
 var content
 	
 func _ready():
