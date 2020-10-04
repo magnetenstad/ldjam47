@@ -14,22 +14,22 @@
 [ext_resource path="res://src/grandma_walk_4.png" type="Texture" id=12]
 [ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=13]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 24, 18 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 24, 24 )
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 18 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 24 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 18 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 21.8369, 19.6522 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -42,8 +42,8 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 8 )
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 12, 8 )
 
 [node name="World" type="Camera2D"]
 anchor_mode = 0
@@ -60,7 +60,7 @@ position = Vector2( 391.098, -49.5576 )
 scale = Vector2( 1000, 100 )
 
 [node name="BarrierBottom" parent="." instance=ExtResource( 3 )]
-position = Vector2( 303.489, 230.323 )
+position = Vector2( 303.489, 229.992 )
 scale = Vector2( 1000, 100 )
 
 [node name="BarrierLeft" parent="." instance=ExtResource( 3 )]
@@ -97,7 +97,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
 position = Vector2( 0, 7 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -109,7 +109,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk/DeskArea"]
 position = Vector2( 0, 13 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -125,7 +125,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LetterDesk"]
 position = Vector2( 0, 7 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -137,7 +137,7 @@ __meta__ = {
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LetterDesk/LetterDeskArea"]
 position = Vector2( 0, 13 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -152,7 +152,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grammophone"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -164,19 +164,19 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grammophone/GrammophoneArea"]
 position = Vector2( 0.584961, 0.0603571 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 192.162, 94.2598 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = SubResource( 4 )
+frames = SubResource( 6 )
 animation = "walk"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -4, 16 )
-shape = SubResource( 3 )
+position = Vector2( 0, 16 )
+shape = SubResource( 7 )
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
 __meta__ = {
@@ -184,8 +184,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
-position = Vector2( -4, 16 )
-shape = SubResource( 3 )
+position = Vector2( 0, 16 )
+shape = SubResource( 7 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
