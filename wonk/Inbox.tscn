@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Inbox.gd" type="Script" id=1]
+[ext_resource path="res://src/computer_background.png" type="Texture" id=2]
 
 [node name="Inbox" type="Control"]
 anchor_right = 1.0
@@ -10,7 +11,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="computer_background" type="Sprite" parent="."]
+scale = Vector2( 6, 6 )
+texture = ExtResource( 2 )
+centered = false
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -20,54 +27,58 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 384.0
+margin_top = 78.0
+margin_right = -384.0
+margin_bottom = -354.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
-margin_right = 638.0
-margin_bottom = 1080.0
+margin_right = 382.0
+margin_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 631.0
-margin_bottom = 1073.0
+margin_right = 375.0
+margin_bottom = 641.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
-margin_right = 624.0
-margin_bottom = 944.0
+margin_right = 368.0
+margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer"]
-margin_right = 624.0
-margin_bottom = 944.0
+margin_right = 368.0
+margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
-margin_top = 948.0
-margin_right = 624.0
-margin_bottom = 1066.0
+margin_top = 564.0
+margin_right = 368.0
+margin_bottom = 634.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Exit"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 642.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_left = 386.0
+margin_right = 1152.0
+margin_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="InfoCont" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-margin_right = 1278.0
-margin_bottom = 107.0
+margin_right = 766.0
+margin_bottom = 64.0
 size_flags_horizontal = 11
 size_flags_vertical = 3
 __meta__ = {
@@ -77,29 +88,29 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/InfoCont"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1271.0
-margin_bottom = 100.0
+margin_right = 759.0
+margin_bottom = 57.0
 
 [node name="WeekLabel" type="Label" parent="HBoxContainer/VBoxContainer/InfoCont/HBoxContainer"]
-margin_right = 630.0
-margin_bottom = 93.0
+margin_right = 374.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 valign = 1
 
 [node name="BalanceLabel" type="Label" parent="HBoxContainer/VBoxContainer/InfoCont/HBoxContainer"]
-margin_left = 634.0
-margin_right = 1264.0
-margin_bottom = 93.0
+margin_left = 378.0
+margin_right = 752.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 2
 valign = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 111.0
-margin_right = 1278.0
-margin_bottom = 968.0
+margin_top = 68.0
+margin_right = 766.0
+margin_bottom = 580.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
@@ -107,13 +118,13 @@ size_flags_stretch_ratio = 8.0
 [node name="Body" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1271.0
-margin_bottom = 850.0
+margin_right = 759.0
+margin_bottom = 505.0
 
 [node name="ReplyButton" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 972.0
-margin_right = 1278.0
-margin_bottom = 1080.0
+margin_top = 584.0
+margin_right = 766.0
+margin_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Reply"

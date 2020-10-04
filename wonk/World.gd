@@ -5,7 +5,7 @@ onready var PLAYER = $YSort/Player
 
 var velocity = Vector2()
 var speed = 10
-var speed_max = 60
+var speed_max = 40
 var overlaps = []
 const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
 
