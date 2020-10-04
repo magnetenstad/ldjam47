@@ -24,5 +24,7 @@ func _on_ButtonSend_pressed():
 		if run:
 			var line = content[key].split("(")
 			LF.callv(line[0], line[1].trim_suffix(")").split(","))
+		else:
+			MAIN.incoming_mail.append("In return: \n" + $TextEdit.text + "\n\nSent in week " + str(MAIN.week))
 	MAIN.focus("World")
 	
