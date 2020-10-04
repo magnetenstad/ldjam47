@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://src/grandma.png" type="Texture" id=2]
@@ -14,14 +14,20 @@
 [ext_resource path="res://src/grandma_walk_4.png" type="Texture" id=12]
 [ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=13]
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24, 18 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 24, 24 )
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.5086, 15.9215 )
+extents = Vector2( 24, 18 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 24, 24 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.8369, 19.6522 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6.88873, 4.15316 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -36,8 +42,8 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 7.79251, 18.5506 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 8 )
 
 [node name="World" type="Camera2D"]
 anchor_mode = 0
@@ -66,14 +72,14 @@ position = Vector2( 370.605, 148.372 )
 scale = Vector2( 100, 600 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 160.084, 88.8653 )
+position = Vector2( 160, 90 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Doormat" type="Sprite" parent="."]
-position = Vector2( 155.296, 164.679 )
+position = Vector2( 160, 164 )
 texture = ExtResource( 6 )
 
 [node name="Letter" type="Sprite" parent="."]
@@ -81,7 +87,7 @@ position = Vector2( 98.3543, 85.0894 )
 texture = ExtResource( 8 )
 
 [node name="Desk" type="StaticBody2D" parent="."]
-position = Vector2( 135.069, 44.4112 )
+position = Vector2( 136, 42 )
 
 [node name="Sprite" type="Sprite" parent="Desk"]
 texture = ExtResource( 4 )
@@ -90,7 +96,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
-shape = SubResource( 1 )
+position = Vector2( 0, 7 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -101,14 +108,14 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Desk/DeskArea"]
-position = Vector2( 0.473343, 3.78671 )
-shape = SubResource( 2 )
+position = Vector2( 0, 13 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="LetterDesk" type="StaticBody2D" parent="."]
-position = Vector2( 229.94, 44.3067 )
+position = Vector2( 232, 42 )
 
 [node name="Sprite" type="Sprite" parent="LetterDesk"]
 texture = ExtResource( 5 )
@@ -117,6 +124,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LetterDesk"]
+position = Vector2( 0, 7 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -127,9 +135,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LetterDesk/LetterDeskArea"]
-position = Vector2( 0.788879, 10.2557 )
-shape = SubResource( 2 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LetterDesk/LetterDeskArea"]
+position = Vector2( 0, 13 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -161,15 +169,14 @@ shape = SubResource( 2 )
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 192.162, 94.2598 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -0.389925, 12.5426 )
-shape = SubResource( 3 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 4 )
 animation = "walk"
-frame = 2
 playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -4, 16 )
+shape = SubResource( 3 )
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
 __meta__ = {
@@ -177,10 +184,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
-shape = SubResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( -4, 16 )
+shape = SubResource( 3 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false

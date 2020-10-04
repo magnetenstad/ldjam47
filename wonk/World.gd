@@ -7,7 +7,6 @@ var velocity = Vector2()
 var speed = 10
 var speed_max = 60
 var overlaps = []
-var dir
 const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
 
 func _ready():
