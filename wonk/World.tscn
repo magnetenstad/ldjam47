@@ -57,18 +57,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="YSort" type="YSort" parent="."]
-
-[node name="Doormat" type="Sprite" parent="YSort"]
+[node name="Doormat" type="Sprite" parent="."]
 position = Vector2( 160, 164 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Letter" type="Sprite" parent="YSort"]
+[node name="Letter" type="Sprite" parent="."]
 position = Vector2( 98.3543, 85.0894 )
 texture = ExtResource( 8 )
+
+[node name="YSort" type="YSort" parent="."]
 
 [node name="Desk" type="StaticBody2D" parent="YSort"]
 position = Vector2( 136, 42 )
@@ -169,7 +169,7 @@ position = Vector2( 192.162, 94.2598 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Player"]
 frames = SubResource( 6 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player"]
@@ -185,20 +185,28 @@ __meta__ = {
 position = Vector2( 0, 16 )
 shape = SubResource( 7 )
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 233.566
-margin_top = 148.436
-margin_right = 315.566
-margin_bottom = 176.436
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 460.0
+margin_top = -240.0
+margin_right = -460.0
+margin_bottom = -29.9999
+size_flags_horizontal = 0
+size_flags_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PanelContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 75.0
-margin_bottom = 21.0
+margin_right = 993.0
+margin_bottom = 203.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1

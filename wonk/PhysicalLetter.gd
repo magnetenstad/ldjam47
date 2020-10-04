@@ -9,7 +9,7 @@ var text = ""
 
 
 func _ready():
-	rotate(rand_range(0, 100)/(50*PI))
+	rotate(rand_range(0, 25)/50*PI)
 	WORLD = get_parent()
 
 
