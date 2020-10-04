@@ -13,7 +13,7 @@ func _ready():
 	TM.init()
 	$Inbox.set_theme(TM.themes[0])
 	$Letter.set_theme(TM.themes[0])	
-	$World/PanelContainer.set_theme(TM.themes[0])	
+	$World/CanvasLayer/PanelContainer.set_theme(TM.themes[0])	
 	focus("World")
 	_on_Time_timeout()
 	add_balance(0)

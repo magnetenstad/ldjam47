@@ -11,7 +11,6 @@ const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
 
 func _ready():
 	letter_receive("Dear Mrs. Wonk\n\nThank you for ordering a computer and internet package.\nWe hope you enjoy your new products.")
-
 func get_input():
 	var temp = velocity.x
 	if Input.is_action_pressed('right'):
@@ -44,11 +43,11 @@ func _physics_process(delta):
 
 func display_label(text):
 	if text == "":
-		$PanelContainer.visible = false
+		$CanvasLayer/PanelContainer.visible = false
 	else:
-		if not $PanelContainer.visible:
-			$PanelContainer.visible = true
-		$PanelContainer/Label.text = text
+		if not $CanvasLayer/PanelContainer.visible:
+			$CanvasLayer/PanelContainer.visible = true
+		$CanvasLayer/PanelContainer/Label.text = text
 
 func get_letters_from_overlapping_dict(dict):
 	var letters = []
@@ -102,5 +101,6 @@ func letter_receive(text):
 	var physical_letter = PHYSICAL_LETTER.instance()
 	physical_letter.text = text
 	self.add_child(physical_letter)
-	physical_letter.position = Vector2(160, 160)
+	self.move_child(physical_letter, 2)
+	physical_letter.position = Vector2(160, 160) + Vector2(rand_range(-10, 10), rand_range(-10, 10))
 	MAIN.get_node("LetterArrivesSound").play()
