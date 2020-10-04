@@ -8,7 +8,6 @@ var speed = 10
 var speed_max = 60
 var overlaps = []
 var dir
-onready var MAIN = get_parent()
 const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
 
 func _ready():
@@ -59,6 +58,27 @@ func get_letters_from_overlapping_dict(dict):
 		return false
 	return letters
 
+func interacts(event):
+	if event.is_action_pressed("interact"):
+		return true
+
+func _input(event):
+	if self.visible:
+		var overlapping_objects = $Player/PlayerArea.get_overlapping_areas()
+		var overlaps = {}
+		for o in overlapping_objects:
+			overlaps[o.name] = o
+		if "DeskArea" in overlaps.keys() and interacts(event):
+			MAIN.focus("Inbox")
+		elif "LetterDeskArea" in overlaps.keys() and interacts(event):
+			MAIN.focus("Letter")
+		elif "GrammophoneArea" in overlaps.keys() and interacts(event):
+			print("Toggle music")
+		elif get_letters_from_overlapping_dict(overlaps) and interacts(event):
+			var letters = get_letters_from_overlapping_dict(overlaps)
+			print(letters[0].get_parent().text)
+			letters[0].get_parent().queue_free()
+
 func _process(delta):
 	if self.visible:
 		var overlapping_objects = $Player/PlayerArea.get_overlapping_areas()
@@ -68,22 +88,12 @@ func _process(delta):
 
 		if "DeskArea" in overlaps.keys():
 			display_label("Computer (e)")
-			if Input.is_action_pressed("interact"):
-				MAIN.focus("Inbox")
 		elif "LetterDeskArea" in overlaps.keys():
 			display_label("Letters (e)")
-			if Input.is_action_pressed("interact"):
-				MAIN.focus("Letter")
 		elif "GrammophoneArea" in overlaps.keys():
 			display_label("Toggle music (e)")
-			if Input.is_action_pressed("interact"):
-				print("Toggle music")
 		elif get_letters_from_overlapping_dict(overlaps):
-			var letters = get_letters_from_overlapping_dict(overlaps)
 			display_label("Read letter (e)")
-			if Input.is_action_pressed("interact"):
-				print(letters[0].get_parent().text)
-				letters[0].get_parent().queue_free()
 		else:
 			display_label("")
 
