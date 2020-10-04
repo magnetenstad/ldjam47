@@ -43,7 +43,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 10, 8 )
+extents = Vector2( 12, 8 )
 
 [node name="World" type="Camera2D"]
 anchor_mode = 0
@@ -60,7 +60,7 @@ position = Vector2( 391.098, -49.5576 )
 scale = Vector2( 1000, 100 )
 
 [node name="BarrierBottom" parent="." instance=ExtResource( 3 )]
-position = Vector2( 303.489, 230.323 )
+position = Vector2( 303.489, 229.992 )
 scale = Vector2( 1000, 100 )
 
 [node name="BarrierLeft" parent="." instance=ExtResource( 3 )]
@@ -175,7 +175,7 @@ animation = "walk"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -4, 16 )
+position = Vector2( 0, 16 )
 shape = SubResource( 7 )
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
@@ -184,7 +184,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
-position = Vector2( -4, 16 )
+position = Vector2( 0, 16 )
 shape = SubResource( 7 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
