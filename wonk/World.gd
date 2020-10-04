@@ -8,6 +8,7 @@ var speed = 10
 var speed_max = 40
 var overlaps = []
 const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
+const READABLE_LETTER = preload("res://ReadableLetter.tscn")
 
 func _ready():
 	letter_receive("Dear Mrs. Wonk\n\nThank you for ordering a computer and internet package.\nWe hope you enjoy your new products.")
@@ -36,10 +37,14 @@ func get_input():
 
 func _physics_process(delta):
 	if self.visible:
+		if $CanvasLayer.layer == -1:
+			$CanvasLayer.layer = 0
 		get_input()
 		velocity = PLAYER.move_and_slide(velocity)
 		PLAYER.position.x = clamp(PLAYER.position.x, 0 + 12, 320 - 12)
 		PLAYER.position.y = clamp(PLAYER.position.y, 0 + 3 * 16 - 8, 180 - 24)
+	elif $CanvasLayer.layer == 0:
+		$CanvasLayer.layer = -1
 
 func display_label(text):
 	if text == "":
@@ -59,8 +64,13 @@ func get_letters_from_overlapping_dict(dict):
 	return letters
 
 func interacts(event):
-	if event.is_action_pressed("interact"):
-		return true
+	return event.is_action_pressed("interact")
+
+func read_letter(letter_text):
+	var letter = READABLE_LETTER.instance()
+	letter.get_node("content").text = letter_text
+	$CanvasLayer/LetterContainer.add_child(letter)
+	letter.set_position(Vector2(get_viewport_rect().size.x/2-160*3/2, get_viewport_rect().size.y/2-210*3/2))
 
 func _input(event):
 	if self.visible:
@@ -73,10 +83,10 @@ func _input(event):
 		elif "LetterDeskArea" in overlaps.keys() and interacts(event):
 			MAIN.focus("Letter")
 		elif "GrammophoneArea" in overlaps.keys() and interacts(event):
-			print("Toggle music")
+			MAIN.get_node("Music").stream_paused = not MAIN.get_node("Music").stream_paused
 		elif get_letters_from_overlapping_dict(overlaps) and interacts(event):
 			var letters = get_letters_from_overlapping_dict(overlaps)
-			print(letters[0].get_parent().text)
+			read_letter(letters[0].get_parent().text)
 			letters[0].get_parent().queue_free()
 
 func _process(delta):
