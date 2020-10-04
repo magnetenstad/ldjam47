@@ -47,6 +47,10 @@ func _process(delta):
 		display_label("Letters (e)")
 		if Input.is_action_pressed("interact"):
 			MAIN.focus("Letter")
+	elif "Grammophone" in overlaps:
+		display_label("Toggle music (e)")
+		if Input.is_action_pressed("interact"):
+			print("Toggle music")
 	else:
 		display_label("")
 		
@@ -66,3 +70,11 @@ func _on_LetterDeskArea_area_entered(area):
 
 func _on_LetterDeskArea_area_exited(area):
 	overlaps.remove("LetterDesk")
+
+
+func _on_GrammophoneArea_area_entered(area):
+	overlaps.append("Grammophone")
+
+
+func _on_GrammophoneArea_area_exited(area):
+	overlaps.remove("Grammophone")

@@ -33,7 +33,8 @@ func json_load(path):
 	
 func focus(scene):
 	for child in get_children():
-		child.visible = false
+		if "visible" in child:
+			child.visible = false
 	get_node(scene).visible = true
 	if scene == "World":
 		$World.zoom = Vector2(0.167, 0.167)
