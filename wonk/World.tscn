@@ -8,11 +8,11 @@
 [ext_resource path="res://src/doormat.png" type="Texture" id=6]
 [ext_resource path="res://src/background.png" type="Texture" id=7]
 [ext_resource path="res://src/item_letter.png" type="Texture" id=8]
-[ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=9]
+[ext_resource path="res://src/gramophone.png" type="Texture" id=9]
 [ext_resource path="res://src/grandma_walk_2.png" type="Texture" id=10]
 [ext_resource path="res://src/grandma_walk_3.png" type="Texture" id=11]
 [ext_resource path="res://src/grandma_walk_4.png" type="Texture" id=12]
-[ext_resource path="res://src/gramophone.png" type="Texture" id=9]
+[ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.5086, 15.9215 )
@@ -30,10 +30,10 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "walk",
-"speed": 0.25
+"speed": 4.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -167,7 +167,8 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 4 )
-animation = "idle"
+animation = "walk"
+frame = 2
 playing = true
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
