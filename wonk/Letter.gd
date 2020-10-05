@@ -11,6 +11,7 @@ func _on_ButtonDiscard_pressed():
 	MAIN.focus("World")
 	
 func _on_ButtonSend_pressed():
+	LF.letter = $TextEdit.text.to_lower()
 	var in_return = true
 	for key in content.keys():
 		var run
@@ -32,4 +33,5 @@ func _on_ButtonSend_pressed():
 	if in_return:
 		MAIN.incoming_letters.append("In return: \n" + $TextEdit.text + "\n\nSent in week " + str(MAIN.week))
 	MAIN.focus("World")
+	$TextEdit.text = ""
 	

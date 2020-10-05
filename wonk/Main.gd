@@ -18,18 +18,18 @@ var subscription_prices = {
 	"AntiAnt Pro": 100
 }
 var incoming_letters = []
-
+var incoming_payments = []
 
 func _ready():
 	TM.init()
 	$Inbox.set_theme(TM.themes[0])
-	$Letter.set_theme(TM.themes[0])	
+	$Letter.set_theme(TM.themes[0])
 	$World/CanvasLayer/PanelContainer.set_theme(TM.themes[0])
 	$World/CanvasLayer/LetterContainer.set_theme(TM.themes[0])
 	focus("World")
 	_on_Time_timeout()
 	add_balance(0)
-	
+
 func file_save(content, path):
 	var file = File.new()
 	file.open(path, File.WRITE)
@@ -52,7 +52,7 @@ func json_save(content, path):
 
 func json_load(path):
 	return parse_json(file_load(path))
-	
+
 func focus(scene):
 	for child in get_children():
 		if "visible" in child:
@@ -71,26 +71,26 @@ func add_balance(n):
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/BalanceLabel.text = "$" + str(balance)
 	if balance == 0:
 		lose_game()
-		
+
 func subscription_add(sub):
 	if not sub in subscriptions:
 		subscriptions.append(sub)
 
 func day_from_number(num):
 	match num:
-		0: 
+		0:
 			return "Monday"
-		1: 
+		1:
 			return "Tuesday"
-		2: 
+		2:
 			return "Wednesday"
-		3: 
+		3:
 			return "Thursday"
-		4: 
+		4:
 			return "Friday"
-		5: 
+		5:
 			return "Saturday"
-		6: 
+		6:
 			return "Sunday"
 
 func _on_Time_timeout():
@@ -108,7 +108,9 @@ func _on_Time_timeout():
 			$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": subscription_payments + "\n\nTo cancel these automatic payments, please reply to this email with a brief statement."})
 		for mail in incoming_letters:
 			$World.letter_receive(mail)
-		incoming_letters = []
+		for payment in incoming_payments:
+			add_balance(payment)
+		incoming_letters.clear()
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = day_from_number(day%7) + ", Week " + str(week)
 	if week > 7 and day % 11 == 0:
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button except the last to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "the last", "close", "DolphinBlock", "dolphin")

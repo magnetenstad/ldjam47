@@ -57,6 +57,11 @@
 		"subject": "Bitcoin Investment Opportunity",
 		"body": "Hello, it's me, Happy Chapman! Be - happy.\n\nFor you madame, I have a very special offer. For an initial payment of only 250 dollars, you will be able to invest in bitcoin.\nThere is a possible return of 900% on this investment.\n\nIf you would like to invest, please write a check to my business address: 'Telegraph Tower, New York' with your name and the sum. Remember to put on the letter that you would like to invest in bitcoin.\nI look forward to hear from you madame.\n\nH. Chapman"
 	},
+	"Job": {
+		"from": "Oldies Articles",
+		"subject": "Regarding your job application.",
+		"body": "You have been hired as a writer. Please send us an article every week. The address is 57 North Alderwood Street."
+	},
 	"4": {
 		"from": "Tom's Software Forum",
 		"subject": "Registration completed",
