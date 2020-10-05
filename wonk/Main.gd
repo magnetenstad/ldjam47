@@ -1,11 +1,11 @@
 extends Node
 onready var TM = ThemeManager.new()
-const DAY_LENGTH = 0.5
-var balance = 1092400
+const DAY_LENGTH = 12
+var balance = 5000
 var day = -1
 var week = 0
 var subscriptions = []
-var lost = false
+var finished = false
 var communicated_with_audi_enthusiast = false
 var received_grandson_adress = false
 var weeks_until_visit = -1
@@ -30,7 +30,7 @@ func _ready():
 	$Letter.set_theme(TM.themes[0])
 	$World/CanvasLayer/PanelContainer.set_theme(TM.themes[0])
 	$World/CanvasLayer/LetterContainer.set_theme(TM.themes[0])
-	$World/CanvasLayer/GameLost.set_theme(TM.themes[0])
+	$World/CanvasLayer/GameEnd.set_theme(TM.themes[0])
 	focus("World")
 	_on_Time_timeout()
 	add_balance(0)
@@ -70,8 +70,14 @@ func focus(scene):
 
 func lose_game():
 	focus("World")
-	$World/CanvasLayer/GameLost.visible = true
-	lost = true
+	$World/CanvasLayer/GameEnd.visible = true
+	finished = true
+	$World/CanvasLayer/GameEnd/Label.text = "Your pension is gone. How will you survive?\n\nYou lost the game."
+	
+func win_game():
+	focus("World")
+	$World/CanvasLayer/GameEnd.visible = true
+	$World/CanvasLayer/GameEnd/Label.text = "Thomas Wonk to the rescue! Your grandson\nfixes your computer. As the day turns to evening you make cinnamon \nbuns and you two walk into the kitchen,\ntalking about how Thomas was as a child and\nhow he has turned into a nice young man."
 
 func add_balance(n):
 	balance = clamp(balance+n, 0, pow(10, 9))
@@ -129,20 +135,24 @@ func _on_Time_timeout():
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = day_from_number(day%7) + ", Week " + str(week)
 	if week > 7 and day % 11 == 0:
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button except the last to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "the last", "close", "DolphinBlock", "dolphin")
-	if day == 13:
-		$Inbox.mail_add($Inbox.content["BrickSuitePro"])
+	if day == 14:
 		subscription_add("Clown Variable Studio")
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Thank you", "For subscribing to Clown Variable Studio", "x", "", "Ok", "cancel", "Undo", "", "Also buy DolphinBlock", "dolphin")
+	if day == 20:
 		subscription_add("ImageShear Pro")
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Thank you", "For subscribing to ImageShear Pro", "x", "", "Ok", "cancel", "Undo", "", "Also buy DolphinBlock", "dolphin")
+	if day == 40:
+		$Inbox.mail_add($Inbox.content["BrickSuitePro"])
 		subscription_add("ChargeMaster Special Pro")
 		subscription_add("WhiteScreen")
 		subscription_add("MindTableTennis")
 		subscription_add("DolphinBlock")
 		subscription_add("AntiAnt Pro")
-	if day > 14 and day % 3 == 0:
+	if day > 30 and day % 3 == 0:
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
 	if day == 16:
 		$Inbox.PF.popup1()
-	if week >= 22 and communicated_with_audi_enthusiast and not received_grandson_adress:
+	if week >= 11 and communicated_with_audi_enthusiast and not received_grandson_adress:
 		received_grandson_adress = true
 		$Letter.LF.letter_queue("Dear Aretha\n\nI recall sending you a letter, which I have thought about a little bit recently. I have been in contact with your grandson, who has not heard from you for long. He has recently changed his adress, so if you have been trying to contact him, this is why it has not been possible. His new adress is 5th Avenue, Sundance Wyoming.\n\nBest regards, 'Audi Enthusiast'")
 

@@ -75,7 +75,7 @@ func read_letter(letter_text):
 	letter.set_position(Vector2(48, 216))
 
 func _input(event):
-	if self.visible and not MAIN.lost:
+	if self.visible and not MAIN.finished:
 		var overlapping_objects = $YSort/Player/PlayerArea.get_overlapping_areas()
 		var overlaps = {}
 		for o in overlapping_objects:
