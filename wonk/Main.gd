@@ -115,8 +115,12 @@ func _on_Time_timeout():
 			$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": subscription_payments + "\n\nTo cancel these automatic payments, please reply to this email with a brief statement."})
 		for mail in incoming_letters:
 			$World.letter_receive(mail)
+		var paid = false
 		for payment in incoming_payments:
 			add_balance(payment)
+			if payment > 0: paid = true
+		if not paid and week > 2:
+			$World.letter_receive("Hello Aretha.\n\nWe didn't recieve any articles from you this week.\n\nRemember to send your articles to 57 Alderwood Street.")
 		incoming_letters.clear()
 		if weeks_until_visit > 0:
 			weeks_until_visit -= 1
@@ -141,7 +145,7 @@ func _on_Time_timeout():
 	if week >= 22 and communicated_with_audi_enthusiast and not received_grandson_adress:
 		received_grandson_adress = true
 		$Letter.LF.letter_queue("Dear Aretha\n\nI recall sending you a letter, which I have thought about a little bit recently. I have been in contact with your grandson, who has not heard from you for long. He has recently changed his adress, so if you have been trying to contact him, this is why it has not been possible. His new adress is 5th Avenue, Sundance Wyoming.\n\nBest regards, 'Audi Enthusiast'")
-		
+
 
 func _on_Music_finished():
 	$Music.play()
