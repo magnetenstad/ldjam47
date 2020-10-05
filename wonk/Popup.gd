@@ -45,7 +45,7 @@ func run_function(function):
 	elif function == "close":
 		close()
 	elif function == "":
-		pass
+		MAIN.get_node("ErrorSound").play()
 	else:
 		PF.call(function)
 

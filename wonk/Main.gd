@@ -2,6 +2,7 @@ extends Node
 onready var TM = ThemeManager.new()
 
 var balance = 10924
+var day = -1
 var week = 0
 var subscriptions = []
 var subscription_prices = {
@@ -22,7 +23,7 @@ var incoming_payments = []
 func _ready():
 	TM.init()
 	$Inbox.set_theme(TM.themes[0])
-	$Letter.set_theme(TM.themes[0])	
+	$Letter.set_theme(TM.themes[0])
 	$World/CanvasLayer/PanelContainer.set_theme(TM.themes[0])
 	$World/CanvasLayer/LetterContainer.set_theme(TM.themes[0])
 	focus("World")
@@ -35,7 +36,7 @@ func _ready():
 	subscription_add("MindTableTennis")
 	subscription_add("DolphinBlock")
 	subscription_add("AntiAnt Pro")
-	
+
 func file_save(content, path):
 	var file = File.new()
 	file.open(path, File.WRITE)
@@ -58,7 +59,7 @@ func json_save(content, path):
 
 func json_load(path):
 	return parse_json(file_load(path))
-	
+
 func focus(scene):
 	for child in get_children():
 		if "visible" in child:
@@ -77,26 +78,52 @@ func add_balance(n):
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/BalanceLabel.text = "$" + str(balance)
 	if balance == 0:
 		lose_game()
-		
+
 func subscription_add(sub):
 	if not sub in subscriptions:
 		subscriptions.append(sub)
 
+func day_from_number(num):
+	match num:
+		0:
+			return "Monday"
+		1:
+			return "Tuesday"
+		2:
+			return "Wednesday"
+		3:
+			return "Thursday"
+		4:
+			return "Friday"
+		5:
+			return "Saturday"
+		6:
+			return "Sunday"
+
 func _on_Time_timeout():
-	$Time.start(30)
-	week += 1
+	$Time.start(8)
+	day += 1
+	if day % 7 == 0:
+		week += 1
+		if str(week) in $Inbox.content.keys():
+			$Inbox.mail_add($Inbox.content[str(week)])
+		var subscription_payments = ""
+		for sub in subscriptions:
+			add_balance(-subscription_prices[sub])
+			subscription_payments += "Your payment for " + sub + ": $" + str(subscription_prices[sub]) + "\n\n"
+		if subscription_payments != "":
+			$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": subscription_payments + "\n\nTo cancel these automatic payments, please reply to this email with a brief statement."})
+		for mail in incoming_letters:
+			$World.letter_receive(mail)
+		for payment in incoming_payments:
+			add_balance(payment)
+		incoming_letters.clear()
+	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = day_from_number(day%7) + ", Week " + str(week)
 	$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
-	if str(week) in $Inbox.content.keys():
-		$Inbox.mail_add($Inbox.content[str(week)])
-	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = "Week " + str(week)
-	for sub in subscriptions:
-		add_balance(-subscription_prices[sub])
-		$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": "Your payment for " + sub + " has gone through.\n\nSum: $" + str(subscription_prices[sub]) + "\n\nTo cancel this automatic payment, please reply to this email with a brief statement."})
-	for mail in incoming_letters:
-		$World.letter_receive(mail)
-	for payment in incoming_payments:
-		add_balance(payment)
-	incoming_letters.clear()
+	if day % 11 == 0:
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "Unlock features", "dolphin", "DolphinBlock", "dolphin")
+
+
 
 func _on_Music_finished():
 	$Music.play()

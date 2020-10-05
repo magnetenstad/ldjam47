@@ -11,7 +11,7 @@ func _init(_main):
 	INBOX = MAIN.get_node("Inbox")
 	word_list = MAIN.file_load("src/The_Oxford_3000.txt")
 	print(word_list)
-	
+
 func cancel(subscription):
 	if subscription in MAIN.subscriptions:
 		MAIN.subscriptions.remove(subscription)
@@ -21,15 +21,15 @@ func cancel(subscription):
 
 func letter_queue(text):
 	MAIN.incoming_letters.append(text)
-	
+
 func payment_queue(payment):
 	MAIN.incoming_payments.append(payment)
-	
+
 func get_scammed_barithon():
 	MAIN.add_balance(-1000)
 	MAIN.subscription_add("Jones-Barithon Saxophone Shop")
 	INBOX.mail_add(INBOX.content["Saxophone"])
-	
+
 func bitcoin_invest(state):
 	state = int(state)
 	var chapman_signature = "\n\nBest regards,\nH. Chapman\n\nRemember: Include your name, my address (Telegraph Tower, New York), the sum and the keyword bitcoin!"
@@ -60,4 +60,6 @@ func article_review():
 	score = min(score, 1000)
 	letter_queue("Hello Aretha, Thank you for your latest articles. You have been awarded $" + str(score) + ".")
 	payment_queue(score)
-	
+
+func receive_codes():
+	INBOX.mail_add(INBOX.content["codes"])
