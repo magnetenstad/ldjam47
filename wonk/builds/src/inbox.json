@@ -1,0 +1,100 @@
+{
+	"HelloGrandma": {
+		"from": "Thomas Wonk",
+		"subject": "Hello grandma!",
+		"body": "Finally we got an email set up for you! \n\nRemember, just send me an email any time if you need help with anything. Oh, and watch out for viruses.\n\nCheers, Thomas :)"
+	},
+	"BrickSuitePro": {
+		"from": "Brick Ltd.",
+		"subject": "Thank you for subscribing to Brick Suite Pro!",
+		"body": "Your computer has now the following programs:\nClown Variable Studio:\nChange all your desktop icons to clowns!\n\nImageShear Pro:\nApply the Shear transformation to images!\n\nChargeMaster Special Pro:\nEnables charging of electronic devices made by Samsung in 2009\n\nWhiteScreen:\nEnables white screen mode, making your screen white.\n\nMindTableTennis:\nAllows you to imagine playing tennis in front of the computer. Look up tennis rules using our en.wikipedia.org/wiki/tennis module.\n\nDolphinBlock:\nEnables mode to block the word 'dolphin',block disabled by default.\n\nAntiAnt Pro:\nKeep ants away from your power supply. The program simply increases the amperage in your power supply to always run at maximum capacity, killing any ants that attempt to enter.\n\nTo cancel any of these programs, you must reply to this email. We are legally obligated to inform you that we also take letters at: 34th street, Elko, Nevada"
+	},
+	"BuyTrompo": {
+		"from": "Nero Consulting",
+		"subject": "Thank you for buying our product.",
+		"body": "Dear Aretha Wonk.\nThank you for buying Trompo Antivirus. You will continue being billed for $100 each week. To cancel your subscription, you must send a letter to our adress at 59128th street, New Dehli. Please note that refund letters must contain your name along with a statement that you want to cancel."
+	},
+	"TrialTrompo": {
+		"from": "Nero Consulting",
+		"subject": "Thank you for trying our product.",
+		"body": "Dear Aretha Wonk.\nThank you for trying Trompo Antivirus. You will be billed for $100 each week from next week. To cancel your subscription, you must send a letter to our adress at 59128th street, New Dehli. Please note that refund letters must contain your name along with a statement that you want to cancel."
+	},
+	"UltraPro": {
+		"from": "Nero Pro Consulting",
+		"subject": "Thank you for buying our product.",
+		"body": "Dear Aretha Wonk.\nThank you for buying Trompo Antivirus UltraPro. You will continue being billed for $500 each week. To cancel your subscription, you must send a letter to our adress at 59129th street, New Dehli. Please note that refund letters must contain your name along with a statement that you want to cancel.\n To cancel UltraPro, you must also write a quick review of the product. Positive reviews containing phrases like 'good' will increase your chance of being able to cancel."
+	},
+	"JavaInfo": {
+		"from": "Oracle",
+		"subject": "Why should I update java?",
+		"body": "You should update java because updating java means we can provide additional services to your computer. Globally, we own more than 200 sharks. Oracle is epic. Being an intern is fucking cool, lol I hope this isn't in prod"
+	},
+
+	"BankSetup": {
+		"from": "Thomas Wonk",
+		"subject": "Your new online bank account",
+		"body": "Hey grandma! Just me again - here are your details for the bank login. \n\nUsername: a.wonk@gmail.com\nPassword:aretha\nPIN: 3914\n\nMake sure to change your password like I showed you - you are very vulnerable to hackers if you keep the temporary password.\n\nLove you, Thomas :)"
+	},
+
+	"SurveyGroups": {
+		"from": "Kito Surveys",
+		"subject": "We need volunteers for the survey groups!",
+		"body": "We need volunteers for our new survey group. You are being contacted because you are in the following target group:\n\nOver 75\nFemale\nHas a computer\nDoes not know matrix multiplication\n\nPlease email us if you are interested in joining the survey group. Tasks involve:\n\nWatching movies and giving feedback\n\nTasting new products from well-known brands\n\nFilling out surveys online\n\nYour feedback is valuable. Please rate this email: bit.ly/clOwn72."
+	},
+
+	"Saxophone": {
+		"from": "Jones-Barithon Saxophone Shop",
+		"subject": "Thank you for subscribing to our sheet music service.",
+		"body": "We are grateful that you would like to be our customer. You can cancel the service anytime through your banking system."
+	},
+	"8": {
+		"from": "Bank1",
+		"subject": "Money Laundering Scam",
+		"body": "We have received reports that a company called 'Jones-Barithon Saxophone Shop' is being used as a front for a massive money laundering campaign.\nThe money is being laundered for a group of scammers in New Dehli, India. If you have been in contact with this company, please respond to this email or send a letter to Bank1 with the reference number.\n\nReference number: 026-11923"
+	},
+	"2": {
+		"from": "H. Chapman",
+		"subject": "Bitcoin Investment Opportunity",
+		"body": "Hello, it's me, Happy Chapman! Be - happy.\n\nFor you madame, I have a very special offer. For an initial payment of only 250 dollars, you will be able to invest in bitcoin.\nThere is a possible return of 900% on this investment.\n\nIf you would like to invest, please write a check to my business address: 'Telegraph Tower, New York' with your name and the sum. Remember to put on the letter that you would like to invest in bitcoin.\nI look forward to hear from you madame.\n\nH. Chapman"
+	},
+	"Job": {
+		"from": "Oldies Articles",
+		"subject": "Regarding your job application.",
+		"body": "You have been hired as a writer. Please send us an article every week. The address is 57 North Alderwood Street."
+	},
+	"4": {
+		"from": "Tom's Software Forum",
+		"subject": "Registration completed",
+		"body": "Thank you for registering your account for Tom's Software Forum. Your username is: twonk\n\nYou have been subscribed to weekly updates from the scams section."
+	},
+	"5": {
+		"from": "Tom's Software Forum",
+		"subject": "Weekly updates",
+		"body": "Weekly highlights for Week 5\n\n3 replies to 'Brick Suite Pro, wrong address?'\n\njones_2: 'Yeah, the address is wrong. It should be 33rd street.'\n\nwill_i_was: 'Does anyone know the codes for cancelling subscriptions? I sent a letter and they replied something about codes to cancel, seems like a scam tbh.'\n\naudi_enthusiast: 'Yeah I know the codes, just send me a PM for the ones you need.'\n\nThank you for participating in Tom's Software Forum. To turn off automatic weekly updates, click here."
+	},
+	"6": {
+		"from": "Tom's Software Forum",
+		"subject": "Weekly updates",
+		"body": "Weekly highlights for Week 5\n\n3 replies to 'Meetup week 6'\n\naudi_enthusiast: We can do the meetup at my place, Avenue 11, Blissfield Ohio\n\nwill_i_was: 'That is EPIC! Im gonna be there'\n\naudi_enthusiast: 'I have some letters to sort out, but you guys can come over friday at 8? If any of you internet people want to send me a letter, make sure to include your email so that I can respond.'\n\nThank you for participating in Tom's Software Forum. To turn off automatic weekly updates, click here."
+	},
+	"7": {
+		"from": "Thomas Wonk",
+		"subject": "Automatic weekly update",
+		"body": "Hey grams! I accidentally used your email adress when signing up for a forum, so you received a bunch of emails that were for me. Sorry bout that - turned it off for you now :) How's the computer coming along? Just send me an email if anything is wrong!"
+	},
+	"codes": {
+		"from": "audi_enthusiast@tomssoftware.com",
+		"subject": "Cancellation codes",
+		"body": "Here are all the codes:\n\nClown Variable Studio:\nXC103\n\nImageShear Pro:\nXC209\n\nChargeMaster Special Pro:\nXC412\n\nWhiteScreen:\nXD991\n\nMindTableTennis:\nXN410\n\nDolphinBlock:\nXL319\n\nAntiAnt Pro:\nXM024"
+	},
+	"Dolphin": {
+		"from": "Brick Ltd",
+		"subject": "Thank you for buying DolphinBlock",
+		"body": "Thank you for buying DolphinBlock! You will automatically be charged each week."
+	},
+	"ThomasVisit": {
+		"from": "Thomas Wonk",
+		"subject": "Visit",
+		"body": "Hello grandma! I write this email just now, as I received your letter. I will come to visit you as soon as I can!"
+	}
+}
