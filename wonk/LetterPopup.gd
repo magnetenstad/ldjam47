@@ -45,3 +45,9 @@ func _on_ButtonScanner_pressed():
 
 func _on_ButtonGarbage_pressed():
 	queue_free()
+
+
+func _on_ButtonEdit_pressed():
+	MAIN.get_node("Letter/TextEdit").text = text
+	MAIN.focus("Letter")
+	

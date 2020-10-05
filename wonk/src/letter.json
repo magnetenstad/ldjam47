@@ -7,5 +7,6 @@
 	"aretha,wonk,250,telegraph tower,new york,bitcoin": "bitcoin_invest(0)",
 	"aretha,wonk,150,telegraph tower,new york,bitcoin": "bitcoin_invest(1)",
 	"aretha,wonk,400,telegraph tower,new york,bitcoin": "bitcoin_invest(2)",
-	"aretha,wonk,1000,telegraph tower,new york,bitcoin": "bitcoin_invest(3)"
+	"aretha,wonk,1000,telegraph tower,new york,bitcoin": "bitcoin_invest(3)",
+	"57,north,alderwood,street":"article_review"
 }

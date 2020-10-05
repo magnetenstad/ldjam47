@@ -17,7 +17,7 @@ var subscription_prices = {
 	"AntiAnt Pro": 100
 }
 var incoming_letters = []
-
+var incoming_payments = []
 
 func _ready():
 	TM.init()
@@ -94,10 +94,9 @@ func _on_Time_timeout():
 		$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": "Your payment for " + sub + " has gone through.\n\nSum: $" + str(subscription_prices[sub]) + "\n\nTo cancel this automatic payment, please reply to this email with a brief statement."})
 	for mail in incoming_letters:
 		$World.letter_receive(mail)
-	incoming_letters = []
-
-
-
+	for payment in incoming_payments:
+		add_balance(payment)
+	incoming_letters.clear()
 
 func _on_Music_finished():
 	$Music.play()

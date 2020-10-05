@@ -15,6 +15,9 @@ __meta__ = {
 scale = Vector2( 6, 6 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TextEdit" type="TextEdit" parent="."]
 anchor_right = 1.0
@@ -23,7 +26,11 @@ margin_left = 622.0
 margin_top = 241.0
 margin_right = -624.0
 margin_bottom = -43.0
+smooth_scrolling = true
+wrap_enabled = true
+caret_blink = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -32,8 +39,9 @@ margin_left = 338.219
 margin_top = 982.165
 margin_right = 498.219
 margin_bottom = 1039.16
-text = "Discard"
+text = "Exit"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -44,6 +52,7 @@ margin_right = 1611.99
 margin_bottom = 1048.89
 text = "Send"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="ButtonDiscard" to="." method="_on_ButtonDiscard_pressed"]

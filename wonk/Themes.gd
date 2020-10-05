@@ -164,6 +164,6 @@ func theme_create(C_BUTTON, C_BUTTON_HOVER, C_BUTTON_FONT, C_LABEL, C_LINE_EDIT,
 	_theme.set_color("font_color", "TextEdit", C_LABEL)
 	_theme.set_color("font_color_selected", "TextEdit", C_LABEL)
 	_theme.set_color("selection_color", "TextEdit", Color(0.2, 0.2, 0.2, 0.5))
-	
+	_theme.set_color("caret_color", "TextEdit", C_LABEL);
 	return _theme
 	

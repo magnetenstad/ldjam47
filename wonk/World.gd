@@ -111,9 +111,11 @@ func _process(delta):
 		
 		var has_garbage = "GarbageArea" in overlaps.keys()
 		var has_scanner = "ScannerArea" in overlaps.keys()
+		var has_letter = "LetterDeskArea" in overlaps.keys()
 		
 		for letter in $CanvasLayer/LetterContainer.get_children():
 			letter.get_node("MarginContainer/VBoxContainer/HBoxContainer/ButtonGarbage").disabled = !has_garbage
+			letter.get_node("MarginContainer/VBoxContainer/HBoxContainer/ButtonEdit").disabled = !has_letter
 			letter.get_node("MarginContainer/VBoxContainer/HBoxContainer/ButtonScanner").disabled = !has_scanner
 
 func letter_receive(text):

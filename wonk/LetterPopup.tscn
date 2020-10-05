@@ -45,14 +45,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ButtonGarbage" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 268.0
+margin_right = 177.0
 margin_bottom = 67.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Throw away"
 
+[node name="ButtonEdit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 181.0
+margin_right = 358.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Edit letter"
+
 [node name="ButtonScanner" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 272.0
+margin_left = 362.0
 margin_right = 540.0
 margin_bottom = 67.0
 size_flags_horizontal = 3
@@ -61,4 +69,5 @@ text = "Scan letter"
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Body" to="." method="_on_Body_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Body" to="." method="_on_Body_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ButtonGarbage" to="." method="_on_ButtonGarbage_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ButtonEdit" to="." method="_on_ButtonEdit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ButtonScanner" to="." method="_on_ButtonScanner_pressed"]

@@ -30,19 +30,19 @@ extents = Vector2( 24, 24 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 8 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 8 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 24, 18 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 8, 16 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -55,10 +55,10 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 12, 8 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=12]
 
 [node name="World" type="Camera2D"]
 anchor_mode = 0
@@ -189,7 +189,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Scanner"]
 position = Vector2( 0, 16 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -201,7 +201,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Scanner/ScannerArea"]
 position = Vector2( 0, 16 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -219,7 +219,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Garbage"]
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -231,7 +231,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Garbage/GarbageArea"]
 position = Vector2( 0, 8 )
-shape = SubResource( 12 )
+shape = SubResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -240,14 +240,14 @@ __meta__ = {
 position = Vector2( 192.162, 94.2598 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Player"]
-frames = SubResource( 6 )
+frames = SubResource( 10 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player"]
 position = Vector2( 0, 16 )
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="PlayerArea" type="Area2D" parent="YSort/Player"]
 __meta__ = {
@@ -256,7 +256,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player/PlayerArea"]
 position = Vector2( 0, 16 )
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="Chair" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 96, 64 )
@@ -266,7 +266,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair"]
 position = Vector2( 0, 14 )
-shape = SubResource( 8 )
+shape = SubResource( 12 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
