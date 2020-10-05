@@ -1,10 +1,14 @@
 extends Node
 onready var TM = ThemeManager.new()
-
-var balance = 10924
+const DAY_LENGTH = 0.5
+var balance = 1092400
 var day = -1
 var week = 0
 var subscriptions = []
+var lost = false
+var communicated_with_audi_enthusiast = false
+var received_grandson_adress = false
+var weeks_until_visit = -1
 var subscription_prices = {
 	"Trompo Antivirus": 100,
 	"Trompo Antivirus UltraPro": 500,
@@ -26,6 +30,7 @@ func _ready():
 	$Letter.set_theme(TM.themes[0])
 	$World/CanvasLayer/PanelContainer.set_theme(TM.themes[0])
 	$World/CanvasLayer/LetterContainer.set_theme(TM.themes[0])
+	$World/CanvasLayer/GameLost.set_theme(TM.themes[0])
 	focus("World")
 	_on_Time_timeout()
 	add_balance(0)
@@ -64,7 +69,9 @@ func focus(scene):
 		$World.zoom = Vector2(1, 1)
 
 func lose_game():
-	print("You lost the game.")
+	focus("World")
+	$World/CanvasLayer/GameLost.visible = true
+	lost = true
 
 func add_balance(n):
 	balance = clamp(balance+n, 0, pow(10, 9))
@@ -94,7 +101,7 @@ func day_from_number(num):
 			return "Sunday"
 
 func _on_Time_timeout():
-	$Time.start(1)
+	$Time.start(DAY_LENGTH)
 	day += 1
 	if day % 7 == 0:
 		week += 1
@@ -115,6 +122,10 @@ func _on_Time_timeout():
 		if not paid and week > 2:
 			$World.letter_receive("Hello Aretha.\n\nWe didn't recieve any articles from you this week.\n\nRemember to send your articles to 57 Alderwood Street.")
 		incoming_letters.clear()
+		if weeks_until_visit > 0:
+			weeks_until_visit -= 1
+		elif weeks_until_visit == 0:
+			$World.thomas_visits()
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = day_from_number(day%7) + ", Week " + str(week)
 	if week > 7 and day % 11 == 0:
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button except the last to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "the last", "close", "DolphinBlock", "dolphin")
@@ -131,6 +142,9 @@ func _on_Time_timeout():
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
 	if day == 16:
 		$Inbox.PF.popup1()
+	if week >= 22 and communicated_with_audi_enthusiast and not received_grandson_adress:
+		received_grandson_adress = true
+		$Letter.LF.letter_queue("Dear Aretha\n\nI recall sending you a letter, which I have thought about a little bit recently. I have been in contact with your grandson, who has not heard from you for long. He has recently changed his adress, so if you have been trying to contact him, this is why it has not been possible. His new adress is 5th Avenue, Sundance Wyoming.\n\nBest regards, 'Audi Enthusiast'")
 
 
 func _on_Music_finished():

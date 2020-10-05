@@ -16,5 +16,7 @@
 	"33rd street,elko,nevada,xd991": "cancel(WhiteScreen)",
 	"33rd street,elko,nevada,xn410": "cancel(MindTableTennis)",
 	"33rd street,elko,nevada,xl319": "cancel(DolphinBlock)",
-	"33rd street,elko,nevada,xm024": "cancel(AntiAnt Pro)"
+	"33rd street,elko,nevada,xm024": "cancel(AntiAnt Pro)",
+	"5th avenue,sundance,wyoming": "letter_queue(Hello\nIf you are trying to contact Thomas Wonk.. He has moved.\nHis new adress is 9th Avenue St Cloud Minnesota.\n\nPlease do not send me any more letters as I am very busy.\n\nV.W.Keishlinger)",
+	"9th avenue,st cloud,minnesota": "thomas_visit"
 }

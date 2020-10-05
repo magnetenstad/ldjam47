@@ -13,7 +13,6 @@ func _ready():
 	content = MAIN.json_load("src/inbox.json")
 	mail_add(content["HelloGrandma"])
 	mail_add(content["BankSetup"])
-	mail_add(content["SurveyGroups"])
 	mail_add(content["Job"])
 	
 func mail_add(dict):
