@@ -69,6 +69,8 @@ func interacts(event):
 func read_letter(letter_text):
 	var letter = READABLE_LETTER.instance()
 	letter.get_node("content").text = letter_text
+	letter.MAIN = MAIN
+	letter.text = letter_text
 	$CanvasLayer/LetterContainer.add_child(letter)
 	letter.set_position(Vector2(get_viewport_rect().size.x/2-160*3/2, get_viewport_rect().size.y/2-210*3/2))
 

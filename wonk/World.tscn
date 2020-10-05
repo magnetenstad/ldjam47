@@ -13,7 +13,6 @@
 [ext_resource path="res://src/grandma_walk_4.png" type="Texture" id=12]
 [ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=13]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 18 )
 
@@ -193,10 +192,10 @@ layer = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 460.0
-margin_top = -240.0
-margin_right = -460.0
-margin_bottom = -29.9999
+margin_left = 40.0
+margin_top = -1040.0
+margin_right = -1580.0
+margin_bottom = -900.0
 mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -207,8 +206,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 993.0
-margin_bottom = 203.0
+margin_right = 293.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1

@@ -68,3 +68,7 @@ func _on_Time_timeout():
 	incoming_mail = []
 
 
+
+
+func _on_Music_finished():
+	$Music.play()

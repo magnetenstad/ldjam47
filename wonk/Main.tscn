@@ -31,4 +31,5 @@ volume_db = 24.0
 [node name="NotificationSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = 24.0
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]
 [connection signal="timeout" from="Time" to="." method="_on_Time_timeout"]

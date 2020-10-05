@@ -4,14 +4,19 @@ var select1_f
 var select2_f
 var select3_f
 var MAIN
+var PF
 var hover = false
 var mouse_position = Vector2(0, 0)
 var mouse_offset
 var mouse_click = false
 
+func _ready():
+	self.set_position(Vector2(clamp(self.get_position().x, 384, 1546-500), clamp(self.get_position().y, 84, 732-300)))
+
 func _process(_delta):
 	if hover and mouse_click:
 		self.set_position(mouse_position - mouse_offset)
+		self.set_position(Vector2(clamp(self.get_position().x, 384, 1546-500), clamp(self.get_position().y, 84, 732-300)))
 		
 func set_variables(header, body, cancel, _cancel_f, select1, _select1_f, select2, _select2_f, select3, _select3_f):
 	$VBoxContainer/PanelContainer/HBoxContainer2/Header.text = header
@@ -28,19 +33,21 @@ func set_variables(header, body, cancel, _cancel_f, select1, _select1_f, select2
 
 
 func close():
+	MAIN.get_node("Inbox").PF.last_popup_x -= 10
+	MAIN.get_node("Inbox").PF.last_popup_y -= 10
 	queue_free()
 
 
 func run_function(function):
 	if "(" in function:
 		var line = function.split("(")
-		MAIN.callv(line[0], line[1].trim_suffix(")").split(","))
+		PF.callv(line[0], line[1].trim_suffix(")").split(","))
 	elif function == "close":
 		close()
 	elif function == "":
 		pass
 	else:
-		MAIN.call(function)
+		PF.call(function)
 
 func _on_CancelButton_pressed():
 	run_function(cancel_f)
