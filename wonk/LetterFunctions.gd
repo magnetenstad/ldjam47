@@ -40,3 +40,6 @@ func bitcoin_invest(state):
 				letter_queue("Dear Aretha. I have transferred the money. Because of you, I am able to stop scamming people in the west for money. Good luck on your journey.\n\nAjit Champan")
 	else:
 		letter_queue("Hello Aretha, I believe you might have sent me the wrong sum. I could not cash in your sum, so please try again" + chapman_signature)
+
+func receive_codes():
+	INBOX.mail_add(INBOX.content["codes"])

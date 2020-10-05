@@ -42,14 +42,39 @@
 		"subject": "Thank you for subscribing to our sheet music service.",
 		"body": "We are grateful that you would like to be our customer. You can cancel the service anytime through your banking system."
 	},
-	"4": {
+	"8": {
 		"from": "Bank1",
 		"subject": "Money Laundering Scam",
 		"body": "We have received reports that a company called 'Jones-Barithon Saxophone Shop' is being used as a front for a massive money laundering campaign.\nThe money is being laundered for a group of scammers in New Dehli, India. If you have been in contact with this company, please respond to this email or send a letter to Bank1 with the reference number.\n\nReference number: 026-11923"
 	},
-	"5": {
+	"2": {
 		"from": "H. Chapman",
 		"subject": "Bitcoin Investment Opportunity",
 		"body": "Hello, it's me, Happy Chapman! Be - happy.\n\nFor you madame, I have a very special offer. For an initial payment of only 250 dollars, you will be able to invest in bitcoin.\nThere is a possible return of 900% on this investment.\n\nIf you would like to invest, please write a check to my business address: 'Telegraph Tower, New York' with your name and the sum. Remember to put on the letter that you would like to invest in bitcoin.\nI look forward to hear from you madame.\n\nH. Chapman"
+	},
+	"4": {
+		"from": "Tom's Software Forum",
+		"subject": "Registration completed",
+		"body": "Thank you for registering your account for Tom's Software Forum. Your username is: twonk\n\nYou have been subscribed to weekly updates from the scams section."
+	},
+	"5": {
+		"from": "Tom's Software Forum",
+		"subject": "Weekly updates",
+		"body": "Weekly highlights for Week 5\n\n3 replies to 'Brick Suite Pro, wrong address?'\n\njones_2: 'Yeah, the address is wrong. It should be 33rd street.'\n\nwill_i_was: 'Does anyone know the codes for cancelling subscriptions? I sent a letter and they replied something about codes to cancel, seems like a scam tbh.'\n\naudi_enthusiast: 'Yeah I know the codes, just send me a PM for the ones you need.'\n\nThank you for participating in Tom's Software Forum. To turn off automatic weekly updates, click here."
+	},
+	"6": {
+		"from": "Tom's Software Forum",
+		"subject": "Weekly updates",
+		"body": "Weekly highlights for Week 5\n\n3 replies to 'Meetup week 6'\n\naudi_enthusiast: We can do the meetup at my place, Avenue 11, Blissfield Ohio\n\nwill_i_was: 'That is EPIC! Im gonna be there'\n\naudi_enthusiast: 'I have some letters to sort out, but you guys can come over friday at 8? If any of you internet people want to send me a letter, make sure to include your email so that I can respond.'\n\nThank you for participating in Tom's Software Forum. To turn off automatic weekly updates, click here."
+	},
+	"7": {
+		"from": "Thomas Wonk",
+		"subject": "Automatic weekly update",
+		"body": "Hey grams! I accidentally used your email adress when signing up for a forum, so you received a bunch of emails that were for me. Sorry bout that - turned it off for you now :) How's the computer coming along? Just send me an email if anything is wrong!"
+	},
+	"codes": {
+		"from": "audi_enthusiast@tomssoftware.com",
+		"subject": "Cancellation codes",
+		"body": "Here are all the codes:\n\nClown Variable Studio:\nXC103\n\nImageShear Pro:\nXC209\n\nChargeMaster Special Pro:\nXC412\n\nWhiteScreen:\nXD991\n\nMindTableTennis:\nXN410\n\nDolphinBlock:\nXL319\n\nAntiAnt Pro:\nXM024"
 	}
 }

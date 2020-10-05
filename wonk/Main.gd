@@ -89,9 +89,12 @@ func _on_Time_timeout():
 	if str(week) in $Inbox.content.keys():
 		$Inbox.mail_add($Inbox.content[str(week)])
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = "Week " + str(week)
+	var subscription_payments = ""
 	for sub in subscriptions:
 		add_balance(-subscription_prices[sub])
-		$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": "Your payment for " + sub + " has gone through.\n\nSum: $" + str(subscription_prices[sub]) + "\n\nTo cancel this automatic payment, please reply to this email with a brief statement."})
+		subscription_payments += "Your payment for " + sub + ": $" + str(subscription_prices[sub]) + "\n\n"
+	if subscription_payments != "":
+		$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": subscription_payments + "\n\nTo cancel these automatic payments, please reply to this email with a brief statement."})
 	for mail in incoming_letters:
 		$World.letter_receive(mail)
 	incoming_letters = []

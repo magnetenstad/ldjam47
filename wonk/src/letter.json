@@ -7,5 +7,13 @@
 	"aretha,wonk,250,telegraph tower,new york,bitcoin": "bitcoin_invest(0)",
 	"aretha,wonk,150,telegraph tower,new york,bitcoin": "bitcoin_invest(1)",
 	"aretha,wonk,400,telegraph tower,new york,bitcoin": "bitcoin_invest(2)",
-	"aretha,wonk,1000,telegraph tower,new york,bitcoin": "bitcoin_invest(3)"
+	"aretha,wonk,1000,telegraph tower,new york,bitcoin": "bitcoin_invest(3)",
+	"avenue 11,blissfield,ohio,code,a.wonk@gmail.com": "receive_codes",
+	"33rd street,elko,nevada,xc103": "cancel(Clown Variable Studio)",
+	"33rd street,elko,nevada,xc209": "cancel(ImageShear Pro)",
+	"33rd street,elko,nevada,xc412": "cancel(ChargeMaster Special Pro)",
+	"33rd street,elko,nevada,xd991": "cancel(WhiteScreen)",
+	"33rd street,elko,nevada,xn410": "cancel(MindTableTennis)",
+	"33rd street,elko,nevada,xl319": "cancel(DolphinBlock)",
+	"33rd street,elko,nevada,xm024": "cancel(AntiAnt Pro)"
 }
