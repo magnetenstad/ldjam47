@@ -1,6 +1,6 @@
 extends Node
 onready var TM = ThemeManager.new()
-const DAY_LENGTH = 12
+const DAY_LENGTH = 18
 var balance = 5000
 var day = -1
 var week = 0
