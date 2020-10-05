@@ -126,7 +126,7 @@ func _on_Time_timeout():
 			add_balance(payment)
 			if payment > 0: paid = true
 		if not paid and week > 2:
-			$World.letter_receive("Hello Aretha.\n\nWe didn't recieve any articles from you this week.\n\nRemember to send your articles to 57 Alderwood Street.")
+			$World.letter_receive("Hello Aretha.\n\nWe didn't recieve any articles from you this week.\n\nRemember to send your articles to 12 Baker Street.")
 		incoming_letters.clear()
 		if weeks_until_visit > 0:
 			weeks_until_visit -= 1
