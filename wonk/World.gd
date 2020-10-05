@@ -8,7 +8,7 @@ var speed = 10
 var speed_max = 40
 var overlaps = []
 const PHYSICAL_LETTER = preload("res://PhysicalLetter.tscn")
-const READABLE_LETTER = preload("res://ReadableLetter.tscn")
+const LETTER_POPUP = preload("res://LetterPopup.tscn")
 
 func _ready():
 	letter_receive("Dear Mrs. Wonk\n\nThank you for ordering a computer and internet package.\nWe hope you enjoy your new products.")
@@ -67,12 +67,12 @@ func interacts(event):
 	return event.is_action_pressed("interact")
 
 func read_letter(letter_text):
-	var letter = READABLE_LETTER.instance()
-	letter.get_node("content").text = letter_text
+	var letter = LETTER_POPUP.instance()
+	letter.get_node("MarginContainer/VBoxContainer/Body").text = letter_text
 	letter.MAIN = MAIN
 	letter.text = letter_text
 	$CanvasLayer/LetterContainer.add_child(letter)
-	letter.set_position(Vector2(get_viewport_rect().size.x/2-160*3/2, get_viewport_rect().size.y/2-210*3/2))
+	letter.set_position(Vector2(48, 216))
 
 func _input(event):
 	if self.visible:
@@ -97,7 +97,7 @@ func _process(delta):
 		var overlaps = {}
 		for o in overlapping_objects:
 			overlaps[o.name] = o
-
+		
 		if "DeskArea" in overlaps.keys():
 			display_label("Computer (e)")
 		elif "LetterDeskArea" in overlaps.keys():
@@ -108,6 +108,13 @@ func _process(delta):
 			display_label("Read letter (e)")
 		else:
 			display_label("")
+		
+		var has_garbage = "GarbageArea" in overlaps.keys()
+		var has_scanner = "ScannerArea" in overlaps.keys()
+		
+		for letter in $CanvasLayer/LetterContainer.get_children():
+			letter.get_node("MarginContainer/VBoxContainer/HBoxContainer/ButtonGarbage").disabled = !has_garbage
+			letter.get_node("MarginContainer/VBoxContainer/HBoxContainer/ButtonScanner").disabled = !has_scanner
 
 func letter_receive(text):
 	var physical_letter = PHYSICAL_LETTER.instance()

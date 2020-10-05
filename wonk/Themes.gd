@@ -75,7 +75,7 @@ func theme_create(C_BUTTON, C_BUTTON_HOVER, C_BUTTON_FONT, C_LABEL, C_LINE_EDIT,
 	_theme.set_stylebox("pressed", "Button", _box_button)
 	_theme.set_stylebox("hover", "Button", _box_button_hover)
 	_theme.set_color("font_color", "Button", C_BUTTON_FONT)
-	_theme.set_color("font_color_disabled", "Button", C_BUTTON_FONT)
+	_theme.set_color("font_color_disabled", "Button", C_BACKGROUND)
 	_theme.set_color("font_color_hover", "Button", C_BUTTON_FONT)
 	_theme.set_color("font_color_pressed", "Button", C_BUTTON_FONT)
 	

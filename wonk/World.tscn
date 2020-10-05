@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://src/grandma.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/grandma_walk_3.png" type="Texture" id=11]
 [ext_resource path="res://src/grandma_walk_4.png" type="Texture" id=12]
 [ext_resource path="res://src/grandma_walk_1.png" type="Texture" id=13]
+[ext_resource path="res://src/garbage.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 18 )
@@ -34,6 +35,12 @@ extents = Vector2( 16, 8 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 24, 18 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 8, 16 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -76,7 +83,7 @@ __meta__ = {
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Desk" type="StaticBody2D" parent="YSort"]
-position = Vector2( 136, 42 )
+position = Vector2( 136, 43 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -107,7 +114,7 @@ __meta__ = {
 }
 
 [node name="LetterDesk" type="StaticBody2D" parent="YSort"]
-position = Vector2( 232, 42 )
+position = Vector2( 232, 43 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -199,12 +206,43 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Garbage" type="StaticBody2D" parent="YSort"]
+position = Vector2( 184, 56 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/Garbage"]
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Garbage"]
+shape = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GarbageArea" type="Area2D" parent="YSort/Garbage"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Garbage/GarbageArea"]
+position = Vector2( 0, 8 )
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Player" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 192.162, 94.2598 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Player"]
 frames = SubResource( 6 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player"]
@@ -238,10 +276,10 @@ visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 40.0
-margin_top = -1040.0
-margin_right = -1580.0
-margin_bottom = -900.0
+margin_left = 48.0
+margin_top = -1032.0
+margin_right = -1572.0
+margin_bottom = -912.0
 mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -254,7 +292,7 @@ __meta__ = {
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 293.0
-margin_bottom = 133.0
+margin_bottom = 113.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 align = 1
