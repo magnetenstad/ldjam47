@@ -115,6 +115,7 @@ func _on_Time_timeout():
 	if week > 7 and day % 11 == 0:
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button except the last to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "the last", "close", "DolphinBlock", "dolphin")
 	if day == 13:
+		$Inbox.mail_add($Inbox.content["BrickSuitePro"])
 		subscription_add("Clown Variable Studio")
 		subscription_add("ImageShear Pro")
 		subscription_add("ChargeMaster Special Pro")
@@ -122,7 +123,7 @@ func _on_Time_timeout():
 		subscription_add("MindTableTennis")
 		subscription_add("DolphinBlock")
 		subscription_add("AntiAnt Pro")
-	if day > 13:
+	if day > 14 and day % 3 == 0:
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
 	if day == 16:
 		$Inbox.PF.popup1()

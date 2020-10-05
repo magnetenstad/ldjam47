@@ -15,7 +15,6 @@ func _ready():
 	mail_add(content["BankSetup"])
 	mail_add(content["SurveyGroups"])
 	mail_add(content["Job"])
-	mail_add(content["BrickSuitePro"])
 	
 func mail_add(dict):
 	var mail = MAIL.instance()

@@ -10,7 +10,6 @@ func _init(_main):
 	MAIN = _main
 	INBOX = MAIN.get_node("Inbox")
 	word_list = MAIN.file_load("src/The_Oxford_3000.txt")
-	print(word_list)
 
 func cancel(subscription):
 	if subscription in MAIN.subscriptions:
