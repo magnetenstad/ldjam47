@@ -29,6 +29,16 @@ func computer_is_hacked():
 func java_ad():
 	popup_show(last_popup_x, last_popup_y, "Update Java", "There is a new update available", "X", "close", "Update now", "close", "Update later", "close", "Send me more information", "java_info")
 
+func scan():
+	if "Trompo Antivirus" in MAIN.subscriptions:
+		popup_show(last_popup_x, last_popup_y, "Completed scan", str(randi()%70+1) + " viruses eliminated by Trompo Antivirus", "X", "close", "Thanks", "close", "Ok", "close", "Buy UltraPro", "trompo_pro")
+	else:
+		popup_show(last_popup_x, last_popup_y, "Completed scan", str(randi()%70+1) + " viruses found.", "X", "close", "Buy antivirus", "buy_trompo", "Computer will be destroy", "close", "Sponsored by Oracle", "java_ad")
+
+func trompo_pro():
+	INBOX.mail_add(INBOX.content["UltraPro"])
+	MAIN.subscription_add("Trompo Antivirus UltraPro")
+
 func java_info():
 	INBOX.mail_add(INBOX.content["JavaInfo"])
 
@@ -44,7 +54,7 @@ func trial():
 	pass
 func buy_trompo():
 	INBOX.mail_add(INBOX.content["BuyTrompo"])
-	MAIN.subscriptions.append("Trompo Antivirus")
+	MAIN.subscription_add("Trompo Antivirus")
 func spam():
 	# func for sending 100 spam mails
 	pass

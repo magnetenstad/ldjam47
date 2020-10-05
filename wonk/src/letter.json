@@ -1,4 +1,11 @@
 {
 	"59128th,aretha wonk,cancel": "cancel(Trompo Antivirus)",
-	"merry christmas": "mail_queue(Merry Christmas Aretha.\n\nBest regards)"
+	"59129th,aretha wonk,cancel,good": "cancel(Trompo Antivirus UltraPro)",
+	"merry christmas": "letter_queue(Merry Christmas Aretha.\n\nBest regards)",
+	"the valley,california,3914": "get_scammed_barithon",
+	"bank1,026,11923": "cancel(Jones-Barithon Saxophone Shop)",
+	"aretha,wonk,250,telegraph tower,new york,bitcoin": "bitcoin_invest(0)",
+	"aretha,wonk,150,telegraph tower,new york,bitcoin": "bitcoin_invest(1)",
+	"aretha,wonk,400,telegraph tower,new york,bitcoin": "bitcoin_invest(2)",
+	"aretha,wonk,1000,telegraph tower,new york,bitcoin": "bitcoin_invest(3)"
 }

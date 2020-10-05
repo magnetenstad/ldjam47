@@ -15,6 +15,7 @@ func _ready():
 	mail_add(content["HelloGrandma"])
 	mail_add(content["BankSetup"])
 	mail_add(content["SurveyGroups"])
+	mail_add(content["BrickSuitePro"])
 	
 	
 func mail_add(dict):
