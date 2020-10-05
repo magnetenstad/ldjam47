@@ -22,7 +22,8 @@ _global_script_class_icons={
 
 config/name="wonk"
 run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://src/Illustration.png"
+config/icon="res://src/icon.png"
 
 [display]
 
