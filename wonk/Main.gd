@@ -137,10 +137,10 @@ func _on_Time_timeout():
 		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button except the last to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "the last", "close", "DolphinBlock", "dolphin")
 	if day == 14:
 		subscription_add("Clown Variable Studio")
-		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Thank you", "For subscribing to Clown Variable Studio", "x", "", "Ok", "cancel", "Undo", "", "Also buy DolphinBlock", "dolphin")
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Thank you", "For subscribing to Clown Variable Studio", "x", "", "Ok", "close", "Undo", "", "Also buy DolphinBlock", "dolphin")
 	if day == 20:
 		subscription_add("ImageShear Pro")
-		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Thank you", "For subscribing to ImageShear Pro", "x", "", "Ok", "cancel", "Undo", "", "Also buy DolphinBlock", "dolphin")
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Thank you", "For subscribing to ImageShear Pro", "x", "", "Ok", "close", "Undo", "", "Also buy DolphinBlock", "dolphin")
 	if day == 40:
 		$Inbox.mail_add($Inbox.content["BrickSuitePro"])
 		subscription_add("ChargeMaster Special Pro")

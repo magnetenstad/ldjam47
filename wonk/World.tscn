@@ -248,7 +248,7 @@ position = Vector2( 192.162, 94.2598 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Player"]
 frames = SubResource( 10 )
 animation = "walk"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Player"]
