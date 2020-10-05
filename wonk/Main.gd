@@ -29,13 +29,6 @@ func _ready():
 	focus("World")
 	_on_Time_timeout()
 	add_balance(0)
-	subscription_add("Clown Variable Studio")
-	subscription_add("ImageShear Pro")
-	subscription_add("ChargeMaster Special Pro")
-	subscription_add("WhiteScreen")
-	subscription_add("MindTableTennis")
-	subscription_add("DolphinBlock")
-	subscription_add("AntiAnt Pro")
 	
 func file_save(content, path):
 	var file = File.new()
@@ -117,10 +110,20 @@ func _on_Time_timeout():
 			$World.letter_receive(mail)
 		incoming_letters = []
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = day_from_number(day%7) + ", Week " + str(week)
-	$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
-	if day % 11 == 0:
-		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "Unlock features", "dolphin", "DolphinBlock", "dolphin")
-
+	if week > 7 and day % 11 == 0:
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button except the last to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "the last", "close", "DolphinBlock", "dolphin")
+	if day == 13:
+		subscription_add("Clown Variable Studio")
+		subscription_add("ImageShear Pro")
+		subscription_add("ChargeMaster Special Pro")
+		subscription_add("WhiteScreen")
+		subscription_add("MindTableTennis")
+		subscription_add("DolphinBlock")
+		subscription_add("AntiAnt Pro")
+	if day > 13:
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
+	if day == 16:
+		$Inbox.PF.popup1()
 
 
 func _on_Music_finished():
