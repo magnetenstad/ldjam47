@@ -1,12 +1,13 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://src/grandma.png" type="Texture" id=2]
+[ext_resource path="res://src/chair.png" type="Texture" id=3]
 [ext_resource path="res://src/table_inbox.png" type="Texture" id=4]
 [ext_resource path="res://src/table_letter.png" type="Texture" id=5]
 [ext_resource path="res://src/doormat.png" type="Texture" id=6]
 [ext_resource path="res://src/background.png" type="Texture" id=7]
-[ext_resource path="res://src/item_letter.png" type="Texture" id=8]
+[ext_resource path="res://src/scanner.png" type="Texture" id=8]
 [ext_resource path="res://src/gramophone.png" type="Texture" id=9]
 [ext_resource path="res://src/grandma_walk_2.png" type="Texture" id=10]
 [ext_resource path="res://src/grandma_walk_3.png" type="Texture" id=11]
@@ -28,6 +29,12 @@ extents = Vector2( 24, 24 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 8 )
 
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 24, 18 )
+
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
@@ -43,6 +50,8 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 12, 8 )
+
+[sub_resource type="RectangleShape2D" id=8]
 
 [node name="World" type="Camera2D"]
 anchor_mode = 0
@@ -63,10 +72,6 @@ texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Letter" type="Sprite" parent="."]
-position = Vector2( 98.3543, 85.0894 )
-texture = ExtResource( 8 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -133,7 +138,7 @@ __meta__ = {
 }
 
 [node name="Grammophone" type="StaticBody2D" parent="YSort"]
-position = Vector2( 64, 120 )
+position = Vector2( 64, 104 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -163,6 +168,37 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Scanner" type="StaticBody2D" parent="YSort"]
+position = Vector2( 240, 136 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/Scanner"]
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Scanner"]
+position = Vector2( 0, 16 )
+shape = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ScannerArea" type="Area2D" parent="YSort/Scanner"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Scanner/ScannerArea"]
+position = Vector2( 0, 16 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Player" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 192.162, 94.2598 )
 
@@ -184,10 +220,21 @@ __meta__ = {
 position = Vector2( 0, 16 )
 shape = SubResource( 7 )
 
+[node name="Chair" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 96, 64 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Chair"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Chair"]
+position = Vector2( 0, 14 )
+shape = SubResource( 8 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -199,6 +246,7 @@ mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -223,5 +271,6 @@ mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
