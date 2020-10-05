@@ -2,6 +2,7 @@ extends Node
 onready var TM = ThemeManager.new()
 
 var balance = 10924
+var day = -1
 var week = 0
 var subscriptions = []
 var subscription_prices = {
@@ -82,23 +83,43 @@ func subscription_add(sub):
 	if not sub in subscriptions:
 		subscriptions.append(sub)
 
-func _on_Time_timeout():
-	$Time.start(30)
-	week += 1
-	$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
-	if str(week) in $Inbox.content.keys():
-		$Inbox.mail_add($Inbox.content[str(week)])
-	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = "Week " + str(week)
-	var subscription_payments = ""
-	for sub in subscriptions:
-		add_balance(-subscription_prices[sub])
-		subscription_payments += "Your payment for " + sub + ": $" + str(subscription_prices[sub]) + "\n\n"
-	if subscription_payments != "":
-		$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": subscription_payments + "\n\nTo cancel these automatic payments, please reply to this email with a brief statement."})
-	for mail in incoming_letters:
-		$World.letter_receive(mail)
-	incoming_letters = []
+func day_from_number(num):
+	match num:
+		0: 
+			return "Monday"
+		1: 
+			return "Tuesday"
+		2: 
+			return "Wednesday"
+		3: 
+			return "Thursday"
+		4: 
+			return "Friday"
+		5: 
+			return "Saturday"
+		6: 
+			return "Sunday"
 
+func _on_Time_timeout():
+	$Time.start(8)
+	day += 1
+	if day % 7 == 0:
+		week += 1
+		if str(week) in $Inbox.content.keys():
+			$Inbox.mail_add($Inbox.content[str(week)])
+		var subscription_payments = ""
+		for sub in subscriptions:
+			add_balance(-subscription_prices[sub])
+			subscription_payments += "Your payment for " + sub + ": $" + str(subscription_prices[sub]) + "\n\n"
+		if subscription_payments != "":
+			$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": subscription_payments + "\n\nTo cancel these automatic payments, please reply to this email with a brief statement."})
+		for mail in incoming_letters:
+			$World.letter_receive(mail)
+		incoming_letters = []
+	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = day_from_number(day%7) + ", Week " + str(week)
+	$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Warning!", "Your computer might have a virus!", "x", "close", "Scan now!", "scan", "Scan later", "close", "Sponsored by Oracle", "java_ad")
+	if day % 11 == 0:
+		$Inbox.PF.popup_show($Inbox.PF.last_popup_x, $Inbox.PF.last_popup_y, "Buy DolphinBlock", "Tired of Dolphins? Click any button to buy DolphinBlock!", "x", "dolphin", "Buy now!", "dolphin", "Unlock features", "dolphin", "DolphinBlock", "dolphin")
 
 
 

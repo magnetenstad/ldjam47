@@ -19,6 +19,7 @@ func popup_show(x, y, header, body, cancel, _cancel_f, select1, _select1_f, sele
 	INBOX.add_child(popup)
 	last_popup_x += 10
 	last_popup_y += 10
+	MAIN.get_node("ClickSound").play()
 
 func popup1():
 	popup_show(last_popup_x, last_popup_y, "FREE ANTIVIRUS", "We have to you give free antivirus!!! defnitely remove all virus.", "X", "close", "get free", "trial", "do not get free", "buy_trompo", "sign up", "popup_sign_up")
@@ -39,6 +40,10 @@ func trompo_pro():
 	INBOX.mail_add(INBOX.content["UltraPro"])
 	MAIN.subscription_add("Trompo Antivirus UltraPro")
 
+func dolphin():
+	INBOX.mail_add(INBOX.content["Dolphin"])
+	MAIN.subscription_add("DolphinBlock")
+
 func java_info():
 	INBOX.mail_add(INBOX.content["JavaInfo"])
 
@@ -50,7 +55,8 @@ func spam_sad():
 		popup_show(last_popup_x, last_popup_y, "WE're SAD TO SEE YOU GO", "why are you leaving", "X", "close", "", "", "", "", "", "")
 
 func trial():
-	# code for signing up for trial, autopay after 30 days
+	INBOX.mail_add(INBOX.content["TrialTrompo"])
+	MAIN.subscription_add("Trompo Antivirus")
 	pass
 func buy_trompo():
 	INBOX.mail_add(INBOX.content["BuyTrompo"])

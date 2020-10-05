@@ -14,6 +14,11 @@
 		"subject": "Thank you for buying our product.",
 		"body": "Dear Aretha Wonk.\nThank you for buying Trompo Antivirus. You will continue being billed for $100 each week. To cancel your subscription, you must send a letter to our adress at 59128th street, New Dehli. Please note that refund letters must contain your name along with a statement that you want to cancel."
 	},
+	"TrialTrompo": {
+		"from": "Nero Consulting",
+		"subject": "Thank you for trying our product.",
+		"body": "Dear Aretha Wonk.\nThank you for trying Trompo Antivirus. You will be billed for $100 each week from next week. To cancel your subscription, you must send a letter to our adress at 59128th street, New Dehli. Please note that refund letters must contain your name along with a statement that you want to cancel."
+	},
 	"UltraPro": {
 		"from": "Nero Pro Consulting",
 		"subject": "Thank you for buying our product.",
@@ -76,5 +81,10 @@
 		"from": "audi_enthusiast@tomssoftware.com",
 		"subject": "Cancellation codes",
 		"body": "Here are all the codes:\n\nClown Variable Studio:\nXC103\n\nImageShear Pro:\nXC209\n\nChargeMaster Special Pro:\nXC412\n\nWhiteScreen:\nXD991\n\nMindTableTennis:\nXN410\n\nDolphinBlock:\nXL319\n\nAntiAnt Pro:\nXM024"
+	},
+	"Dolphin": {
+		"from": "Brick Ltd",
+		"subject": "Thank you for buying DolphinBlock",
+		"body": "Thank you for buying DolphinBlock! You will automatically be charged each week."
 	}
 }
