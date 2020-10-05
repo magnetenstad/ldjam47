@@ -11,7 +11,6 @@ var content
 
 func _ready():
 	content = MAIN.json_load("src/inbox.json")
-	PF.popup1()
 	mail_add(content["HelloGrandma"])
 	mail_add(content["BankSetup"])
 	mail_add(content["SurveyGroups"])
