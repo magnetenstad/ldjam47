@@ -94,7 +94,7 @@ func day_from_number(num):
 			return "Sunday"
 
 func _on_Time_timeout():
-	$Time.start(8)
+	$Time.start(1)
 	day += 1
 	if day % 7 == 0:
 		week += 1
@@ -108,8 +108,12 @@ func _on_Time_timeout():
 			$Inbox.mail_add({"from": "Bank1", "subject": "Payment confirmation", "body": subscription_payments + "\n\nTo cancel these automatic payments, please reply to this email with a brief statement."})
 		for mail in incoming_letters:
 			$World.letter_receive(mail)
+		var paid = false
 		for payment in incoming_payments:
 			add_balance(payment)
+			if payment > 0: paid = true
+		if not paid and week > 2:
+			$World.letter_receive("Hello Aretha.\n\nWe didn't recieve any articles from you this week.\n\nRemember to send your articles to 57 Alderwood Street.")
 		incoming_letters.clear()
 	$Inbox/HBoxContainer/VBoxContainer/InfoCont/HBoxContainer/WeekLabel.text = day_from_number(day%7) + ", Week " + str(week)
 	if week > 7 and day % 11 == 0:
