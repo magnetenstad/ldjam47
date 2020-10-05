@@ -62,3 +62,8 @@ func article_review():
 
 func receive_codes():
 	INBOX.mail_add(INBOX.content["codes"])
+	MAIN.communicated_with_audi_enthusiast = true
+
+func thomas_visit():
+	INBOX.mail_add(INBOX.content["ThomasVisit"])
+	MAIN.weeks_until_visit = 2

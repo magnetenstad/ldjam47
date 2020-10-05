@@ -75,7 +75,7 @@ func read_letter(letter_text):
 	letter.set_position(Vector2(48, 216))
 
 func _input(event):
-	if self.visible:
+	if self.visible and not MAIN.lost:
 		var overlapping_objects = $YSort/Player/PlayerArea.get_overlapping_areas()
 		var overlaps = {}
 		for o in overlapping_objects:
@@ -125,3 +125,8 @@ func letter_receive(text):
 	self.move_child(physical_letter, 2)
 	physical_letter.position = Vector2(160, 160) + Vector2(rand_range(-10, 10), rand_range(-10, 10))
 	MAIN.get_node("LetterArrivesSound").play()
+	
+func thomas_visits():
+	$YSort/Thomas.visible = true
+	MAIN.win_game()
+	

@@ -91,5 +91,10 @@
 		"from": "Brick Ltd",
 		"subject": "Thank you for buying DolphinBlock",
 		"body": "Thank you for buying DolphinBlock! You will automatically be charged each week."
+	},
+	"ThomasVisit": {
+		"from": "Thomas Wonk",
+		"subject": "Visit",
+		"body": "Hello grandma! I write this email just now, as I received your letter. I will come to visit you as soon as I can!"
 	}
 }

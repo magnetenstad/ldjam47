@@ -41,8 +41,11 @@ func trompo_pro():
 	MAIN.subscription_add("Trompo Antivirus UltraPro")
 
 func dolphin():
-	INBOX.mail_add(INBOX.content["Dolphin"])
-	MAIN.subscription_add("DolphinBlock")
+	if not "DolphinBlock" in MAIN.subscriptions:
+		INBOX.mail_add(INBOX.content["Dolphin"])
+		MAIN.subscription_add("DolphinBlock")
+	else:
+		MAIN.get_node("ErrorSound").play()
 
 func java_info():
 	INBOX.mail_add(INBOX.content["JavaInfo"])
